@@ -28,35 +28,16 @@
 
    <!--''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''-->
    <body class="bg">
+      
       <div class="top top-bar-bg">
-         <div class="logo">
-            <a href="index.php">Sy<span>S</span>chool</a>
-         </div>
-         <!--end of logo-->
-         <div class="login">
-            <form>
-               <input type="text" title="User Name" name="" placeholder="User Name">
-               <input type="Password" title="Password" name="" placeholder="Password">
-               <button>LOGIN </button>                           
-            </form>
-         </div>
-         <!--end of login menu-->
-         <div class="menu">
-            <ul>
-               <li><a href="index.php">HOME</a></li>
-               <li><a href="services.php">DOWNLOADS</a></li>
-               <li  class="selected"><a href="about.php">ABOUT</a></li>
-               <!--<li><a href="services.php">SERVICES</a></li>
-               <li><a href="works.php">WORKS</a></li>
-               <li ><a href="pricing.php"  >PRICING</a></li>-->
-               <li><a  href="signup.php">SIGNUP</a></li>
-            </ul>
-         </div>
-         <!--end of menu-->
+
+         <?php
+         require_once "header.php";
+         ?>
+         
       </div>
       <!--end of top-->
 
-      <!--''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''-->
       <div class="banner">
          <h1>ABOUT US</h1>
          <p>      Team colourPlus</p>
@@ -245,90 +226,10 @@
          <!--end of col-md-12-->
   <!--    </div>
       <!--end of about more-->
-      <div class="foot">
-         <div class="row">
-            <div class="col-md-12 ">
-               <div class="col-md-1 nopadding">
-                  <div class="head4">
-                  <p>CONTACT FOR MORE</p>
-                  </div>
-               </div>
-               <div class="col-md-11 nopadding">
-                  <div class="col-md-12 nopadding">
-                     <div class="head3">
-                        <h3>GET IN   <span>TOUCH</span> WITH US</h3>
-                     </div>
-                     <div class="sos">
-                        <ul>
-                           <li>
-                              <div class="circle"><a href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></div>
-                           </li>
-                           <li>
-                              <div class="circle"><a href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></div>
-                           </li>
-                           <li>
-                              <div class="circle"><a href="http://www.googleplus.com"><i class="fa fa-google-plus"></i></a></div>
-                           </li>
-                           <li>
-                              <div class="circle"><a href="http://www.youtube.com"><i class="fa fa-youtube"></i></a></div>
-                           </li>
-                        </ul>
-                     </div>
-                     <!--end of sos-->
-                     <div class="con-home">
-                        <div class="col-md-4 nopadding">
-                           <div class="contact-home">
-                              <h4><i class="fa fa-phone"></i></h4>
-                              <h3> +94 77 312 90 22</h3>
-                              <h3> +94 112 23 45 20</h3>
-                           </div>
-                           <!--end of contact home-->
-                        </div>
-                        <!--end of nopadding-->
-                        <div class="col-md-4 nopadding">
-                           <div class="contact-home">
-                              <h4><i class="fa fa-envelope"></i></h4>
-                              <h3> 11, A R De Mel Rd,</h3>
-                              <h3>Colombo 04</h3>
-                           </div>
-                           <!--end of contact home-->
-                        </div>
-                        <!--end of nopadding-->
-                        <div class="col-md-4 nopadding">
-                           <div class="contact-home">
-                              <h4><i class="fa fa-envelope"></i></h4>
-                              <h3>contact@gmail.com</h3>
-                              <h3> contact@syschool.com</h3>
-                           </div>
-                           <!--end of contact home-->
-                        </div>
-                        <!--end of nopadding-->
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!--end of foot-->
-      <div class="bottom-foot">
-         <div class="row nopadding">
-            <div class="col-md-12 nopadding">
-               <div class="col-md-6 nopadding">
-                  <p>Copyrights &copy; 2018 | <a href="http://www.SySchool.com" style=" color: #16a085;">SySchool</a> Inc</p>
-               </div>
-               <!--end of col-12-->
-               <div class="col-md-6 nopadding">
-                  <ul>
-                     <li><a href="index.php">HOME</a></li>
-                     <li><a href="about.php">ABOUT</a></li>
-                  </ul>
-               </div>
-               <!--end of col-12-->
-            </div>
-            <!--end of col-12-->
-         </div>
-         <!--en of row-->
-      </div>
-      <!--end of bottom foot-->
+      
+      <?php
+      require_once "footer.php";
+      ?>
+
    </body>
 </html>
