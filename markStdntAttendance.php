@@ -80,11 +80,11 @@
                ?>
                <tr>
                <td> <?php echo $serialNumber; ?></td>
-               <td> <?php echo $row['Name']; ?>
-               <input type="hidden" value="<?php echo $row['Name']; ?>" name="Name[]">
+               <td> <?php echo $row['name']; ?>
+               <input type="hidden" value="<?php echo $row['name']; ?>" name="name[]">
                </td>
-               <td> <?php echo $row['ReferenceNum']; ?>
-               <input type="hidden" value="<?php echo $row['ReferenceNum']; ?>" name="ReferenceNum[]">
+               <td> <?php echo $row['admission_number']; ?>
+               <input type="hidden" value="<?php echo $row['admission_number']; ?>" name="admission_number[]">
                </td>
                <td> 
                <input type="radio" name="attendance_status[<?php echo $counter;?>]" value="Present">Present
@@ -97,9 +97,6 @@
                ?>
          </table>
       </div>
-            <input type="hidden" name="date" value="$date">
-            <input type="hidden" name="grade" value="grade">
-            <input type="hidden" name="class" value="class">
             <button type="submit">SUBMIT</button></div>            
    </form>
             </form>

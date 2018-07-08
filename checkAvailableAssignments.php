@@ -58,7 +58,7 @@
       </div>
       <!--end of top-->
       <div class="banner">
-         <h1>SUBMIT ASSIGNMENT</h1>
+         <h1>VIEW ASSIGNMENT</h1>
       </div>
       <!--end of banner-->  
       <div class="col-md-12">
