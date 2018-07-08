@@ -1,3 +1,35 @@
+<?php 
+
+function get_grades(){
+   $conn = mysqli_connect('localhost','root','');
+   $db = mysqli_select_db($conn,'syschool');
+   $query = "select * from marks";
+   $data = mysqli_query($conn,$query);
+   $grades = array();
+   while($object=mysqli_fetch_object($data)){
+      $grades[]=$object;
+   }
+   mysqli_close($conn);
+   return $grades;
+}
+
+function get_table(){
+      $table_str="<table>";
+      $grades=get_grades();
+      $table_str.="<tr>";
+      $table_str.="<th>Subject</th><th>1st Term</th><th>2nd Term</th><th>3rd Term</th><th>Avarage</th>";
+      $table_str.="</tr>";
+      foreach($grades as $grade){
+         $table_str.="<tr>";
+         $table_str.='<td>'.$grade->subject.'</td>'.'<td>'.$grade->term_1.'</td>'.'<td>'.$grade->term_2.'</td>'.'<td>'.$grade->term_3.'</td>'.'<td>'.$grade->avarage.'</td>';
+         $table_str.="</tr>";
+      }
+      $table_str.="</table>";
+      return $table_str;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -10,7 +42,7 @@
       <meta name="robots" content="index, follow" >
       <meta name="googlebot" content="noodp" >
       <meta name="slurp" content="noydir">
-      <title>SySchool - Submit Marks </title>
+      <title>SySchool - View My Grades </title>
       <link rel="icon" href="images/fav.png" type="image/gif" sizes="16x16">
       <!-- ********************* CSS  LINKS ********************* -->
       <link href="styles/custom.css" rel="stylesheet">
@@ -34,7 +66,7 @@
          <!--end of logo-->
          <div class="login">
             <form>
-               <button>H V S De Silva</button>                           
+               <button>B L O D Hemachandra</button>                           
             </form>
          </div>
          <!--end of login menu-->
@@ -54,51 +86,15 @@
       <!--end of top-->
 
       <div class="banner">
-         <h1>MARKS SUBMISSION</h1>
+         <h1>VIEW MY GRADES</h1>
       </div>
       <!--end of banner-->  
-      <div class="col-md-12">
-         <div class="address">
-            <form action="submitMarks.php" method="POST"> 
-               <fieldset>
-                  <ul>
-                  <li class="col-md-2">Class</li>
-                  <li><input class="col-md-9" type="text" name="class" placeholder="Class"></li>
-                  <li class="col-md-2">Subject</li>
-                  <li><input class="col-md-9" type="text" name="subject" placeholder="Subject"></li>
 
-                  <div class="timetable" style="overflow-x:auto;">
-                     <table>
-                        <tr>
-                           <th>Admission Number</th>
-                           <th>Student Name</th>
-                           <th>Marks</th>
-                        </tr>
-                        <tr>
-                           <td></td>
-                           <td></td>
-                           <td><input class="col-md-12" type="text" name="marks"></td>
-                        </tr>
-                        <tr>
-                           <td></td>
-                           <td></td>
-                           <td><input class="col-md-12" type="text" name="marks"></td>
-                        </tr>
-                        <tr>
-                           <td></td>
-                           <td></td>
-                           <td><input class="col-md-12" type="text" name="marks"></td>
-                        </tr>
-                     </table>
-                  </div>                  
-               <div class="col-md-2"><button>PRINT</button></div>
-               <button type="submit">SUBMIT</button></div>   
-   </form>
-            </form>
-         </div>
-         <!--end of address-->
+      <div class="timetable" style="overflow-x:auto;">
+         <?php
+            echo get_table();
+         ?>
       </div>
-      <!--end of col-md-12-->
 
       <?php 
          require_once 'footer.php';

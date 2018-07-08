@@ -1,3 +1,7 @@
+<?php
+   include_once "assignment.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -10,7 +14,7 @@
       <meta name="robots" content="index, follow" >
       <meta name="googlebot" content="noodp" >
       <meta name="slurp" content="noydir">
-      <title>SySchool - Time Table</title>
+      <title>SySchool - Student SignUp </title>
       <link rel="icon" href="images/fav.png" type="image/gif" sizes="16x16">
       <!-- ********************* CSS  LINKS ********************* -->
       <link href="styles/custom.css" rel="stylesheet">
@@ -18,11 +22,11 @@
       <link href="styles/bootstrap/bootstrap.min.css" rel="stylesheet">
       <link href="styles/font-awesome.css" rel="stylesheet">
       <!-- ********************* JS JQUERY LINKS ********************* -->
-      <script src="js/jquery-1.11.1.min.js"></script>  
-      <script src="js/general.js"></script>     
+      <script src="js/jquery-1.11.1.min.js"></script>   
       <!-- *********************  JS LINKS ********************* -->
       <script src="js/slider.js"></script>   
-      <script src="js/cycle.js"></script>      
+      <script src="js/cycle.js"></script>  
+      <script src="js/general.js"></script>   
       <script src="js/scroll.js"></script>    
    </head>
    <body class="bg">
@@ -33,114 +37,118 @@
          <!--end of logo-->
          <div class="login">
             <form>
-               <button>B L O D HEMACHANDRA</button>                           
+               <input type="text" title="User Name" name="" placeholder="User Name">
+               <input type="Password" title="Password" name="" placeholder="Password">
+               <button>LOGIN </button>                           
             </form>
          </div>
          <!--end of login menu-->
          <div class="menu">
             <ul>
-               <li class="selected"><a href="homestudent.php">HOME</a></li>
+               <li><a href="index.php">HOME</a></li>
                <li><a href="services.php">DOWNLOADS</a></li>
                <li><a href="about.php">ABOUT</a></li>
                <!--<li><a href="services.php">SERVICES</a></li>
                <li><a href="works.php">WORKS</a></li>
                <li ><a href="pricing.php"  >PRICING</a></li>-->
-               <li><a  href="signup.php">LOGOUT</a></li>
+               <li class="selected"><a  href="signup.php">SIGNUP</a></li>
             </ul>
          </div>
          <!--end of menu-->
       </div>
       <!--end of top-->
       <div class="banner">
-         <h1>STUDENT TIME TABLE</h1>
+         <h1>SUBMIT ASSIGNMENT</h1>
       </div>
-      <!--end of banner-->
+      <!--end of banner-->  
+      <div class="col-md-12">
+         <div class="address">
+            <form action="selectAssignment.php" method="POST"> 
+                  <ul>
 
-      <div class="timetable" style="overflow-x:auto;">
-         <table>
-            <tr>
-               <th></th>
-               <th>Monday</th>
-               <th>Tuesday</th>
-               <th>Wednesday</th>
-               <th>Thursday</th>
-               <th>Friday</th>
-            </tr>
-            <tr>
-               <td>07.50-08.30</td>
-               <td>Mathematics</td>
-               <td>History</td>
-               <td>History</td>
-               <td>Sinhala</td>
-               <td>English</td>
-            </tr>
-            <tr>
-               <td>08.30-09.10</td>
-               <td>Mathematics</td>
-               <td>History</td>
-               <td>History</td>
-               <td>Sinhala</td>
-               <td>English</td>
-            </tr>
-            <tr>
-               <td>09.10-09.50</td>
-               <td>Mathematics</td>
-               <td>History</td>
-               <td>History</td>
-               <td>Sinhala</td>
-               <td>English</td>
-            </tr>
-            <tr>
-               <td>09.50-10.30</td>
-               <td>Mathematics</td>
-               <td>History</td>
-               <td>History</td>
-               <td>Sinhala</td>
-               <td>English</td>
-            </tr>
-            <tr>
-               <td>10.30-10.50</td>
-               <td>I N</td>
-               <td>T E</td>
-               <td>R</td>
-               <td>V A</td>
-               <td>L</td>
-            </tr>
-            <tr>
-               <td>10.50-11.30</td>
-               <td>Mathematics</td>
-               <td>History</td>
-               <td>History</td>
-               <td>Sinhala</td>
-               <td>English</td>
-            </tr>
-            <tr>
-               <td>11.30-12.10</td>
-               <td>Mathematics</td>
-               <td>History</td>
-               <td>History</td>
-               <td>Sinhala</td>
-               <td>English</td>
-            </tr>
-            <tr>
-               <td>12.10-12.50</td>
-               <td>Mathematics</td>
-               <td>History</td>
-               <td>History</td>
-               <td>Sinhala</td>
-               <td>English</td>
-            </tr>
-            <tr>
-               <td>12.50-01.30</td>
-               <td>Mathematics</td>
-               <td>History</td>
-               <td>History</td>
-               <td>Sinhala</td>
-               <td>English</td>
-            </tr>
-         </table>
+                     <li class="col-md-3">Class</li>
+                  <li>
+                  <select name="class">
+                     <option value="A">A</option>
+                     <option value="B">B</option>
+                     <option value="C">C</option>
+                     <option value="D">D</option>
+                     <option value="E">E</option>
+                     <option value="F">F</option>
+                     <option value="G">G</option>
+                  </select>
+                  </li>
+                 
+
+                  <li class="col-md-3">Grade</li>
+                  <li>
+                  <select name="grade">
+                     <option value="6">6</option>
+                     <option value="7">7</option>
+                     <option value="8">8</option>
+                     <option value="9">9</option>
+                     <option value="10">10</option>
+                     <option value="11">11</option>
+                     <option value="12">12</option>
+                     <option value="13">13</option>
+                  </select>
+                  </li>
+
+
+                  
+
+                  <li class="col-md-3">Subject</li>
+                  <li>
+                  <select name="subject">
+                     <option value="Mathematics">Mathematics</option>
+                     <option value="Science">Science</option>
+                     <option value="English">English</option>
+                     <option value="Sinhala">Sinhala</option>
+                     <option value="Tamil">Tamil</option>
+                     <option value="History">History</option>
+                     <option value="Religion">Religion</option>
+                  </select>
+                  </li>
+                  </ul>
+                  
+
+
+         <?php
+         include_once "dbconnect.php";
+         $sql = "SELECT * FROM Assignments";
+         $qry = $con->query($sql);
+         echo "<label>Assignment Name :</label>";
+         echo "<select name='assignmentname' onchange='this.form.submit()'>";
+         if($qry->num_rows>0){
+            while($row = $qry->fetch_assoc()){
+               $assignment = unserialize($row['val']);
+               if($_POST['class']==$assignment->getClass() && $assignment->getGrade() == $_POST['grade']){
+                  if (isset($_POST['assignmentname']) && $_POST['assignmentname'] == $assignment->getAssigmentname()){
+                                      $selected = "selected";
+                                  } else {
+                                      $selected = "";
+                                  }
+                                  if (!isset($_POST['assignmentname'])){
+                                      $_POST['assignmentname'] = $assignment->getAssignmentname();
+                                  }
+                                  echo "<option value='".$assignment->getAssignmentname()."' $selected>";
+                              }
+                          }
+                      }else{
+                          echo "<option value='0' selected hidden></option>";
+                      }
+                      echo "</select><br><br>";
+               
+              ?>
+
+              <button type="submit">NEXT</button></div>
+
+               </form>
+      </form>
+         </div>
+         <!--end of address-->
       </div>
-
+      <!--end of col-md-12-->
       <div class="foot">
          <div class="row">
             <div class="col-md-12 ">
@@ -226,6 +234,5 @@
          <!--en of row-->
       </div>
       <!--end of bottom foot-->
-      
-   </body>
 </html>
+

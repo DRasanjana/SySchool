@@ -10,7 +10,7 @@
       <meta name="robots" content="index, follow" >
       <meta name="googlebot" content="noodp" >
       <meta name="slurp" content="noydir">
-      <title>SySchool - Time Table</title>
+      <title>SySchool - Student SignUp </title>
       <link rel="icon" href="images/fav.png" type="image/gif" sizes="16x16">
       <!-- ********************* CSS  LINKS ********************* -->
       <link href="styles/custom.css" rel="stylesheet">
@@ -18,11 +18,11 @@
       <link href="styles/bootstrap/bootstrap.min.css" rel="stylesheet">
       <link href="styles/font-awesome.css" rel="stylesheet">
       <!-- ********************* JS JQUERY LINKS ********************* -->
-      <script src="js/jquery-1.11.1.min.js"></script>  
-      <script src="js/general.js"></script>     
+      <script src="js/jquery-1.11.1.min.js"></script>   
       <!-- *********************  JS LINKS ********************* -->
       <script src="js/slider.js"></script>   
-      <script src="js/cycle.js"></script>      
+      <script src="js/cycle.js"></script>  
+      <script src="js/general.js"></script>   
       <script src="js/scroll.js"></script>    
    </head>
    <body class="bg">
@@ -33,113 +33,89 @@
          <!--end of logo-->
          <div class="login">
             <form>
-               <button>B L O D HEMACHANDRA</button>                           
+               <input type="text" title="User Name" name="" placeholder="User Name">
+               <input type="Password" title="Password" name="" placeholder="Password">
+               <button>LOGIN </button>                           
             </form>
          </div>
          <!--end of login menu-->
          <div class="menu">
             <ul>
-               <li class="selected"><a href="homestudent.php">HOME</a></li>
+               <li><a href="index.php">HOME</a></li>
                <li><a href="services.php">DOWNLOADS</a></li>
                <li><a href="about.php">ABOUT</a></li>
                <!--<li><a href="services.php">SERVICES</a></li>
                <li><a href="works.php">WORKS</a></li>
                <li ><a href="pricing.php"  >PRICING</a></li>-->
-               <li><a  href="signup.php">LOGOUT</a></li>
+               <li class="selected"><a  href="signup.php">SIGNUP</a></li>
             </ul>
          </div>
          <!--end of menu-->
       </div>
       <!--end of top-->
       <div class="banner">
-         <h1>STUDENT TIME TABLE</h1>
+         <h1>UPLOAD ASSIGNMENT</h1>
       </div>
-      <!--end of banner-->
+      <!--end of banner-->  
+      <div class="col-md-12">
+         <div class="address">
+            <form action="recordAssignment.php" method="POST" enctype="multipart/form-data"> 
+               <fieldset>
+                  <ul>
+                 
+                  <li class="col-md-3">Grade</li>
+                  <li>
+                  <select name="grade">
+                     <option value="6">6</option>
+                     <option value="7">7</option>
+                     <option value="8">8</option>
+                     <option value="9">9</option>
+                     <option value="10">10</option>
+                     <option value="11">11</option>
+                     <option value="12">12</option>
+                     <option value="13">13</option>
+                  </select>
+                  </li>
 
-      <div class="timetable" style="overflow-x:auto;">
-         <table>
-            <tr>
-               <th></th>
-               <th>Monday</th>
-               <th>Tuesday</th>
-               <th>Wednesday</th>
-               <th>Thursday</th>
-               <th>Friday</th>
-            </tr>
-            <tr>
-               <td>07.50-08.30</td>
-               <td>Mathematics</td>
-               <td>History</td>
-               <td>History</td>
-               <td>Sinhala</td>
-               <td>English</td>
-            </tr>
-            <tr>
-               <td>08.30-09.10</td>
-               <td>Mathematics</td>
-               <td>History</td>
-               <td>History</td>
-               <td>Sinhala</td>
-               <td>English</td>
-            </tr>
-            <tr>
-               <td>09.10-09.50</td>
-               <td>Mathematics</td>
-               <td>History</td>
-               <td>History</td>
-               <td>Sinhala</td>
-               <td>English</td>
-            </tr>
-            <tr>
-               <td>09.50-10.30</td>
-               <td>Mathematics</td>
-               <td>History</td>
-               <td>History</td>
-               <td>Sinhala</td>
-               <td>English</td>
-            </tr>
-            <tr>
-               <td>10.30-10.50</td>
-               <td>I N</td>
-               <td>T E</td>
-               <td>R</td>
-               <td>V A</td>
-               <td>L</td>
-            </tr>
-            <tr>
-               <td>10.50-11.30</td>
-               <td>Mathematics</td>
-               <td>History</td>
-               <td>History</td>
-               <td>Sinhala</td>
-               <td>English</td>
-            </tr>
-            <tr>
-               <td>11.30-12.10</td>
-               <td>Mathematics</td>
-               <td>History</td>
-               <td>History</td>
-               <td>Sinhala</td>
-               <td>English</td>
-            </tr>
-            <tr>
-               <td>12.10-12.50</td>
-               <td>Mathematics</td>
-               <td>History</td>
-               <td>History</td>
-               <td>Sinhala</td>
-               <td>English</td>
-            </tr>
-            <tr>
-               <td>12.50-01.30</td>
-               <td>Mathematics</td>
-               <td>History</td>
-               <td>History</td>
-               <td>Sinhala</td>
-               <td>English</td>
-            </tr>
-         </table>
+                  <li class="col-md-3">Class</li>
+                  <li>
+                  <select name="class">
+                     <option value="A">A</option>
+                     <option value="B">B</option>
+                     <option value="C">C</option>
+                     <option value="D">D</option>
+                     <option value="E">E</option>
+                     <option value="F">F</option>
+                     <option value="G">G</option>
+                  </select>
+                  </li>
+                 
+
+                  <li class="col-md-3">Subject</li>
+                  <li>
+                  <select name="subject">
+                     <option value="Mathematics">Mathematics</option>
+                     <option value="Science">Science</option>
+                     <option value="English">English</option>
+                     <option value="Sinhala">Sinhala</option>
+                     <option value="Tamil">Tamil</option>
+                     <option value="History">History</option>
+                     <option value="Religion">Religion</option>
+                  </select>
+                  </li>
+
+                  <li class="col-md-3">Assignment Name</li>
+                  <li><input class="col-md-12" type="text" name="assignmentname" placeholder="Assignment Name"></li>
+                  <li class="col-md-3"><input class="col-md-12" type="file" name="file"></li>
+                  </ul>
+               </fieldset>
+               <button type="submit" name="submit">UPLOAD</button></div>            
+   </form>
+            </form>
+         </div>
+         <!--end of address-->
       </div>
+      <!--end of col-md-12-->
 
       <div class="foot">
          <div class="row">
@@ -226,6 +202,5 @@
          <!--en of row-->
       </div>
       <!--end of bottom foot-->
-      
    </body>
 </html>

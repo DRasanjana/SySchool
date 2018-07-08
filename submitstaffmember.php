@@ -1,10 +1,7 @@
 <?php
 	include_once "StaffMember.php";
 	include_once "DBOperations.php";
-
 ?>
-
-
 
 <!DOCTYPE html>
 <html>
