@@ -54,7 +54,7 @@
       </div>
       <!--end of top-->
       <div class="banner">
-         <h1>STUDENT ATTENDANCE</h1>
+         <h1>STUDENT ATTENDENCE</h1>
       </div>
       <!--end of banner-->  
       <div class="col-md-12">

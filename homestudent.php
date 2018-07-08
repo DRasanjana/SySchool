@@ -75,7 +75,7 @@
                      </a>
                   </div>
                   <div class="col-md-3">
-                     <a href="#" id="show-project-a">
+                     <a href="viewGrades.php" id="show-project-a">
                         <div class="img-box">
                            <div class="img">
                               <img src="images/gal/33.jpg" alt="gallery"  >
