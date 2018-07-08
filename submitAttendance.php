@@ -4,16 +4,16 @@ include_once "dbconnect.php";
 		foreach($_POST['attendance_status'] as $id=>$attendance_status){	
 			$admission_number=$_POST['admission_number'][$id];
 			$date=date("Y-m-d");
-<<<<<<< HEAD
-			$Result=mysqli_query($con,"INSERT INTO attendence(admission_number,attended,date) VALUES ('$admission_number,'$attendance_status','$date')");
-=======
-			$Result=mysqli_query($con,"INSERT INTO attendence(admission_number,attended,date) VALUES ('$admission_number','$attendance_status','$date')");
->>>>>>> fe7fcc9bc16aecf9a871cad54bf13ea2d7ef0dfb
+			$qry=mysqli_query($con,"SELECT class FROM student WHERE admission_number='$admission_number'");
+			$crow=mysqli_fetch_array($qry);
+			$class=$crow['class'];
+
+			$Result=mysqli_query($con,"INSERT INTO attendence(admission_number,class,attended,date) VALUES ('$admission_number','$class','$attendance_status','$date')");
 			if($Result){
 				Print '<script>alert("Attendence recorded successfully!");</script>'; 
 			}
 
-		} header("location: hometeacher.php");
+		} header("location: studentAttendance.php");
 	}
 ?>
    
