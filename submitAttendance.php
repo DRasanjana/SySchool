@@ -4,12 +4,12 @@ include_once "dbconnect.php";
 		foreach($_POST['attendance_status'] as $id=>$attendance_status){	
 			$admission_number=$_POST['admission_number'][$id];
 			$date=date("Y-m-d");
-			$Result=mysql_query("INSERT INTO attendence(admission_number,attended,date) VALUES ('$admission_number,'$attendance_status','$date')");
+			$Result=mysqli_query($con,"INSERT INTO attendence(admission_number,attended,date) VALUES ('$admission_number','$attendance_status','$date')");
 			if($Result){
 				Print '<script>alert("Attendence recorded successfully!");</script>'; 
 			}
 
-		} header("location: studentAttendance.php");
+		} header("location: hometeacher.php");
 	}
 ?>
    
