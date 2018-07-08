@@ -1,21 +1,22 @@
 <?php
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    session_start();
-    $username = mysql_real_escape_string($_POST['UserName']);
-    $password = md5(mysql_real_escape_string($_POST['Password']));
+  include_once "User.php";
+  include_once "DBOperations.php";
 
-    mysql_connect("localhost", "root", "") or die (mysql_error());
-    mysql_select_db("syschool") or die ("Oops !!"); 
+
+if(isset($_POST['login'])){
+  $db = new DBOperations();
+  $db->checklogin($_POST['username'],$_POST['password']);
+}
 	
-  $Student_query = mysql_query("Select * from student WHERE Username='$username'"); 
+  /*$Student_query = mysql_query("Select * from user WHERE Username='$username'"); 
 	$Teacher_query = mysql_query("Select * from teacher WHERE Username='$username'"); 
 	$Admin_query = mysql_query("Select * from staff WHERE Username='$username'");
+	*/
+  //$Student_exists = mysql_num_rows($Student_query);
+	/*$Teacher_exists = mysql_num_rows($Teacher_query);
+	$Admin_exists = mysql_num_rows($Admin_query);*/
 	
-  $Student_exists = mysql_num_rows($Student_query);
-	$Teacher_exists = mysql_num_rows($Teacher_query);
-	$Admin_exists = mysql_num_rows($Admin_query);
-	
-    $StudentTableUser = "";
+   /* $StudentTableUser = "";
     $StudentTablePassword = "";	
 	$TeacherTableUser = "";
 	$TeacherTablePassword = "";	
@@ -45,7 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	   
 	   
     }
-	else if($Teacher_exists > 0)
+	/*else if($Teacher_exists > 0)
 	{
 		while($row = mysql_fetch_assoc($Teacher_query))
        {																																																																																																																																																																																																																															
@@ -88,11 +89,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         Print '<script>alert("Incorrect Password!");</script>'; 
         Print '<script>window.location.assign("index.php");</script>'; 
 	}
-	}
-    else
-    {
+	}*/
+    else{
         Print '<script>alert("Incorrect username!");</script>'; 
         Print '<script>window.location.assign("index.php");</script>';
     }
-}
+
 ?>

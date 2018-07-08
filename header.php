@@ -33,10 +33,10 @@ elseif ($c=="signup.php") {
          </div>
          <!--end of logo-->
          <div class="login">
-            <form>
-               <input type="text" title="User Name" name="" placeholder="User Name">
-               <input type="Password" title="Password" name="" placeholder="Password">
-               <button>LOGIN </button>                           
+            <form action="checklogin.php" method="POST">
+               <input type="text" title="User Name" name="username" placeholder="User Name">
+               <input type="Password" title="Password" name="password" placeholder="Password">
+               <button type="submit" name="login">LOGIN </button>                           
             </form>
          </div>
          <!--end of login menu-->

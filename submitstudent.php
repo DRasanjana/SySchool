@@ -38,6 +38,5 @@
 			Print '<script>window.location.assign("signupstudent.php")</script>';
 		}
 	?>
-
 </body>
 </html>
