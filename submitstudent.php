@@ -1,8 +1,6 @@
 <?php
 	include_once "Student.php";
 	include_once "DBOperations.php";
-
-
 ?>
 
 <!DOCTYPE html>

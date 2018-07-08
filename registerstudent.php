@@ -27,30 +27,7 @@
    </head>
    <body class="bg">
       <div class="top top-bar-bg">
-         <div class="logo">
-            <a href="index.php">Sy<span>S</span>chool</a>
-         </div>
-         <!--end of logo-->
-         <div class="login">
-            <form action="checklogin" method="POST">
-               <input type="text" title="Username" name="Username" placeholder="User Name">
-               <input type="Password" title="Password" name="Password" placeholder="Password">
-               <button>LOGIN </button>                           
-            </form>
-         </div>
-         <!--end of login menu-->
-         <div class="menu">
-            <ul>
-               <li><a href="index.php">HOME</a></li>
-               <li><a href="services.php">DOWNLOADS</a></li>
-               <li><a href="about.php">ABOUT</a></li>
-               <!--<li><a href="services.php">SERVICES</a></li>
-               <li><a href="works.php">WORKS</a></li>
-               <li ><a href="pricing.php"  >PRICING</a></li>-->
-               <li class="selected"><a  href="signup.php">SIGNUP</a></li>
-            </ul>
-         </div>
-         <!--end of menu-->
+         <?php include_once "header.php"?>
       </div>
       <!--end of top-->
       <div class="banner">

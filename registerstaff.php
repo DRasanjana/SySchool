@@ -27,11 +27,10 @@
    </head>
    <body class="bg">
       <div class="top top-bar-bg">
-         <?php include_once "header.php"?>
-      </div>
+         <?php include_once "header.php"?>      </div>
       <!--end of top--> 
       <div class="banner">
-         <h1>TEACHER REGISTRATION FORM</h1>
+         <h1>STAFF MEMBER REGISTRATION FORM</h1>
       </div>
       <!--end of banner-->  
       <div class="col-md-12">
