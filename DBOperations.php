@@ -24,7 +24,7 @@ class DBOperations{
 	}
 
 	public function insertStudent($student){
-		$this->connect()->query("INSERT INTO student VALUES ('$student->admissionNumber','$student->fullName','$student->nameWithInitials','$student->address','$student->dateOfBirth','$student->gender','$student->nicNumber','$student->contactNumber','$student->fatherName','$student->fatherOccupation','$student->motherName','$student->motherOccupation','$student->username','$student->password')");
+		$this->connect()->query("INSERT INTO student VALUES ('$student->admissionNumber','$student->fullName','$student->nameWithInitials','$student->address','$student->dateOfBirth','$student->gender','$student->nicNumber','$student->contactNumber','$student->class','$student->fatherName','$student->fatherOccupation','$student->motherName','$student->motherOccupation')");
 	}
 
 	public function insertTeacher($teacher){

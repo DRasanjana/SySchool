@@ -61,46 +61,17 @@
          <div class="address">
             <form action="submitteacher.php" method="POST">
                <fieldset>
-                  <legend>Personal Info</legend>
+                  <legend>Create an Account</legend>
                   <ul>
-                  <li class="col-md-3" class="address">Reference Number</li>
-                  <li><input class="col-md-12" type="text" title="Enter valid Reference Number!" pattern="[0-9]{3,6}" name="referenceNumber" placeholder="Reference Number"></li>
-                  <li class="col-md-3">Full Name</li>
-                  <li><input class="col-md-12" type="text" title="Recheck your Name!" pattern="[a-zA-Z ]{4,}" name="fullName" placeholder="Full Name"></li>
-                  <li class="col-md-3">Name with Initials</li>
-                  <li><input class="col-md-12" type="text" title="Recheck your Name!" pattern="[a-zA-Z .]{4,}" name="nameWithInitials" placeholder="Name with initials"></li>
-                  <li class="col-md-3">Address</li>
-                  <li><input class="col-md-12" type="text" title="Recheck your Address!" pattern="[a-z0-9A-Z ,./-]{4,}" name="address" placeholder="Address"></li>
-                  <li class="col-md-3">Date Of Birth</li>
-                  <li><input class="col-md-12" type="Date" name="dateOfBirth"></li>
-                  <li class="col-md-3">Gender</li>
-                  <li>
-                  <select name="gender">
-                     <option value="male">Male</option>
-                     <option value="female">Female</option>
-                  </select>
-                  </li>
-                  <li class="col-md-3">NIC Number</li>
-                  <li><input class="col-md-12" type="text" title="Enter valid NIC Number!" pattern="[0-9]+[Vv]" name="nicNumber" placeholder="NIC Number"></li>
-                  <li class="col-md-3">Contact Number</li>
-                  <li><input class="col-md-12" type="text" name="contactNumber" placeholder="Contact Number"></li>
-                  <li class="col-md-3">Field Of Specialized</li>
-                  <li><input class="col-md-12" type="text" name="fieldOfSpecialized" placeholder="Field Of Specialized"></li>
-                  <li class="col-md-3">Working Experience</li>
-                  <li>
-                     <select name="workingExperience">
-                        <option value="below1yrs">Below 1 year</option>
-                        <option value="below2yrs">Below 2 years</option>
-                        <option value="below5yrs">Below 5 years</option>
-                        <option value="below10yrs">Below 10 years</option>
-                        <option value="below25yrs">Below 25 years</option>
-                        <option value="above25yrs">Above 25 years</option>
-                     </select>
-                  </li>
-                  <li class="col-md-3">Position</li>
-                  <li><input class="col-md-12" type="text" name="position" placeholder="Position"></li>
-               </ul>
+                  <li class="col-md-3">Username</li>
+                  <li><input class="col-md-12" type="text" name="username" placeholder="Username"></li>
+                  <li class="col-md-3">Password</li>
+                  <li><input class="col-md-12" type="Password" name="password" placeholder="Password"></li>
+              <li class="col-md-3">Confirm Password</li>
+                  <li><input class="col-md-12" type="Password" name="confirmPassword" placeholder="Confirm Password"></li>
+                  </ul>
                </fieldset>
+               <br>
                <fieldset>
                   <legend>Payment Info</legend>
                   <ul>
@@ -113,19 +84,7 @@
                               <li class="col-md-3">Account/Card Name</li>
                               <li><input class="col-md-12" type="text" name="" placeholder="Account/Card Name"></li>
                            </ul>
-               </fieldset>
-			   <fieldset>
-                  <legend>Create an Account</legend>
-                  <ul>
-                  <li class="col-md-3">Username</li>
-                  <li><input class="col-md-12" type="text" name="username" placeholder="Username"></li>
-                  <li class="col-md-3">Password</li>
-                  <li><input class="col-md-12" type="Password" name="password" placeholder="Password"></li>
-				  <li class="col-md-3">Confirm Password</li>
-                  <li><input class="col-md-12" type="Password" name="confirmPassword" placeholder="Confirm Password"></li>
-                  </ul>
-               </fieldset>
-			   
+               </fieldset>			   
                <div class="col-md-2"><button>PRINT</button></div>
                <div class="col-md-10"><button type="submit">SUBMIT</button></div>
             </form>

@@ -54,42 +54,49 @@
       </div>
       <!--end of top-->
       <div class="banner">
-         <h1>STUDENT SIGNUP</h1>
+         <h1>STUDENT REGISTRATION FORM</h1>
       </div>
       <!--end of banner-->  
       <div class="col-md-12">
          <div class="address">
             <form action="submitstudent.php" method="POST"> 
                <fieldset>
-                  <legend>Create an Account</legend>
                   <ul>
-                  <li class="col-md-3">Username</li>
-                  <li><input class="col-md-12" type="text" name="username" placeholder="Username" required="required" ></li>
-                  <li class="col-md-3">Password</li>
-                  <li><input class="col-md-12" type="Password" name="password" placeholder="Password" required="required"></li>
-                  <li class="col-md-3">Confirm Password</li>
-                  <li><input class="col-md-12" type="Password" name="confirmPassword" placeholder="Confirm Password" required="required"></li>
-                  </ul>
-               </fieldset>
-               <br>
-               <fieldset>
-                  <legend>Payment Info</legend>
-                  <ul>
-                  <li class="col-md-3">Payment Method</li>
-                  <li class="col-md-9">
-                  <select>
-                     <option>Cash</option>
-                     <option>Bank Card</option>
+                  <li class="col-md-3">Admission Number</li>
+                  <li><input class="col-md-12" type="text" title="Enter valid Admission Number!" pattern="[0-9]{3,6}" name="admissionNumber" placeholder="Admission Number"></li>
+                  <li class="col-md-3">Full Name</li>
+                  <li><input class="col-md-12" type="text" title="Recheck your Name!" pattern="[a-zA-Z ]{4,}" name="fullName" placeholder="Full Name"></li>
+                  <li class="col-md-3">Name with Initials</li>
+                  <li><input class="col-md-12" type="text" title="Recheck your Name!" pattern="[a-zA-Z .]{4,}" name="nameWithInitials" placeholder="Name with initials"></li>
+                  <li class="col-md-3">Address</li>
+                  <li><input class="col-md-12" type="text" title="Recheck your Address!" pattern="[a-z0-9A-Z ,./-]{4,}" name="address" placeholder="Address"></li>
+                  <li class="col-md-3">Date Of Birth</li>
+                  <li><input class="col-md-12" type="Date" name="dateOfBirth"></li>
+                  <li class="col-md-3">Gender</li>
+                  <li>
+                  <select name="gender">
+                     <option value="male">Male</option>
+                     <option value="female">Female</option>
                   </select>
                   </li>
-                  <li class="col-md-3">Amount</li>
-                  <li><input class="col-md-12" type="text" name="" placeholder="Amount"></li>
-                  <li class="col-md-3">Payment Slip Invoice No</li>
-                  <li><input class="col-md-12" type="text" name="" placeholder="Payment Slip Invoice Number"></li>
+                  <li class="col-md-3">NIC Number</li>
+                  <li><input class="col-md-12" type="text" title="Enter valid NIC Number!" pattern="[0-9]+[Vv]" name="nicNumber" placeholder="NIC Number"></li>
+                  <li class="col-md-3">Contact Number</li>
+                  <li><input class="col-md-12" type="text" name="contactNumber" placeholder="Contact Number"></li>
+                  <li class="col-md-3">Class</li>
+                  <li><input class="col-md-12" type="text" name="class" placeholder="Class"></li>
+                  <li class="col-md-3">Father's Name</li>
+                  <li><input class="col-md-12" type="text" title="Recheck Father's Name!" pattern="[a-zA-Z ]{4,}" name="fatherName" placeholder="Father's Name"></li>
+                  <li class="col-md-3">Occupation</li>
+                  <li><input class="col-md-12" type="text" name="fatherOccupation" placeholder="Occupation"></li>
+                  <li class="col-md-3">Mother's Name</li>
+                  <li><input class="col-md-12" type="text" title="Recheck Mother's Name!" pattern="[a-zA-Z ]{4,}" name="motherName" placeholder="Mother's Name"></li>
+                  <li class="col-md-3">Occupation</li>
+                  <li><input class="col-md-12" type="text" name="motherOccupation" placeholder="Occupation"></li>
                   </ul>
                </fieldset>
-               <button type="submit">SUBMIT</button></div>            
-   </form>
+               <div class="col-md-2"><button>PRINT</button></div>
+               <button type="submit">REGISTER</button></div>            
             </form>
          </div>
          <!--end of address-->
