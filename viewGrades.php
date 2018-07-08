@@ -3,7 +3,7 @@
 function get_grades(){
    $conn = mysqli_connect('localhost','root','');
    $db = mysqli_select_db($conn,'syschool');
-   $query = "select * from marks";
+   $query = "SELECT * FROM `score_record` WHERE `admission_number`=123";
    $data = mysqli_query($conn,$query);
    $grades = array();
    while($object=mysqli_fetch_object($data)){
@@ -17,11 +17,11 @@ function get_table(){
       $table_str="<table>";
       $grades=get_grades();
       $table_str.="<tr>";
-      $table_str.="<th>Subject</th><th>1st Term</th><th>2nd Term</th><th>3rd Term</th><th>Avarage</th>";
+      $table_str.="<th>Mathematics</th><th>Science</th><th>Sinhala</th><th>English</th><th>Total</th><th>Average</th><th>Rank</th><th>Term</th><th>Year</th>";
       $table_str.="</tr>";
       foreach($grades as $grade){
          $table_str.="<tr>";
-         $table_str.='<td>'.$grade->subject.'</td>'.'<td>'.$grade->term_1.'</td>'.'<td>'.$grade->term_2.'</td>'.'<td>'.$grade->term_3.'</td>'.'<td>'.$grade->avarage.'</td>';
+         $table_str.='<td>'.$grade->mathematics.'</td>'.'<td>'.$grade->science.'</td>'.'<td>'.$grade->sinhala.'</td>'.'<td>'.$grade->english.'</td>'.'<td>'.$grade->total.'</td>'.'<td>'.$grade->average.'</td>'.'<td>'.$grade->rank.'</td>'.'<td>'.$grade->term.'</td>'.'<td>'.$grade->year.'</td>';
          $table_str.="</tr>";
       }
       $table_str.="</table>";
@@ -72,13 +72,13 @@ function get_table(){
          <!--end of login menu-->
          <div class="menu">
             <ul>
-               <li class="selected"><a href="hometeacher.php">HOME</a></li>
+               <li class="selected"><a href="homestudent.php">HOME</a></li>
                <li><a href="services.php">DOWNLOADS</a></li>
                <li><a href="about.php">ABOUT</a></li>
                <!--<li><a href="services.php">SERVICES</a></li>
                <li><a href="works.php">WORKS</a></li>
                <li ><a href="pricing.php"  >PRICING</a></li>-->
-               <li><a  href="signup.php">LOGOUT</a></li>
+               <li><a  href="index.php">LOGOUT</a></li>
             </ul>
          </div>
          <!--end of menu-->
@@ -97,7 +97,7 @@ function get_table(){
       </div>
 
       <?php 
-         require_once 'footer.php';
+         require_once 'footermin.php';
       ?>
    </body>
 </html>

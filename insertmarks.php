@@ -1,3 +1,35 @@
+<?php 
+
+function get_grades(){
+   $conn = mysqli_connect('localhost','root','');
+   $db = mysqli_select_db($conn,'syschool');
+   $query = "SELECT `admission_number`, `name` FROM `student` WHERE `class`='6A'";
+   $data = mysqli_query($conn,$query);
+   $grades = array();
+   while($object=mysqli_fetch_object($data)){
+      $grades[]=$object;
+   }
+   mysqli_close($conn);
+   return $grades;
+}
+
+function get_table(){
+      $table_str="<table>";
+      $grades=get_grades();
+      $table_str.="<tr>";
+      $table_str.="<th>Admission Number</th><th>Student Name</th><th>Marks</th>";
+      $table_str.="</tr>";
+      foreach($grades as $grade){
+         $table_str.="<tr>";
+         $table_str.='<td>'.$grade->admission_number.'</td>'.'<td>'.$grade->name.'</td>'.'<td><input class="col-md-12" type="text" name="marks"></td>';
+         $table_str.="</tr>";
+      }
+      $table_str.="</table>";
+      return $table_str;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -62,35 +94,32 @@
             <form action="submitMarks.php" method="POST"> 
                <fieldset>
                   <ul>
-                  <li class="col-md-2">Class</li>
-                  <li><input class="col-md-9" type="text" name="class" placeholder="Class"></li>
-                  <li class="col-md-2">Subject</li>
+                  <li class="col-md-3">Class</li>
+                  <li>
+                  <select name="class">
+                     <option value="6a">6A</option>
+                     <option value="7a">7A</option>
+                  </select>
+                  </li>
+                  <li class="col-md-3">Subject</li>
                   <li><input class="col-md-9" type="text" name="subject" placeholder="Subject"></li>
-
                   <div class="timetable" style="overflow-x:auto;">
-                     <table>
-                        <tr>
-                           <th>Admission Number</th>
-                           <th>Student Name</th>
-                           <th>Marks</th>
-                        </tr>
-                        <tr>
-                           <td></td>
-                           <td></td>
-                           <td><input class="col-md-12" type="text" name="marks"></td>
-                        </tr>
-                        <tr>
-                           <td></td>
-                           <td></td>
-                           <td><input class="col-md-12" type="text" name="marks"></td>
-                        </tr>
-                        <tr>
-                           <td></td>
-                           <td></td>
-                           <td><input class="col-md-12" type="text" name="marks"></td>
-                        </tr>
-                     </table>
-                  </div>                  
+                     <?php
+                        echo get_table();
+                     ?>
+                  </div>
+
+                  <li class="col-md-3">Term</li>
+                  <li>
+                  <select name="term">
+                     <option value="term_1">Term 1</option>
+                     <option value="term_2">Term 2</option>
+                     <option value="term_3">Term 3</option>
+                  </select>
+                  </li>
+                  <li class="col-md-3">Year</li>
+                  <li><input class="col-md-3" type="text" name="year" placeholder="Enter the year"></li>
+
                <div class="col-md-2"><button>PRINT</button></div>
                <button type="submit">SUBMIT</button></div>   
    </form>
@@ -101,7 +130,7 @@
       <!--end of col-md-12-->
 
       <?php 
-         require_once 'footer.php';
+         require_once 'footermin.php';
       ?>
    </body>
 </html>

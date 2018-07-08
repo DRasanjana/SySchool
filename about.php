@@ -43,65 +43,6 @@
          <p>      Team colourPlus</p>
       </div>
       <!--end of banner-->
- <!--     <div class="about-page">
-         <div class="icon-box">
-            <div class="col-md-4">
-               <div class="icon">
-                  <i class="fa fa-coffee"></i>
-                  <h3>WE'RE CREATIVE</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a dolor quis leo mollis tempor. Etiam porta tempus pellentesque. Aliquam eu mi metus. Etiam neque ipsum,   </p>
-               </div>
-               <!--end of icon-->
-  <!--          </div>
-            <!--end of col-4-->
-  <!--          <div class="col-md-4">
-               <div class="icon">
-                  <i class="fa fa-clock-o"></i>
-                  <h3>WE'RE PUNTUAL</h3>
-                  <p> In eu lacus neque. In feugiat neque et mauris commodo, eu iaculis turpis aliquam. Mauris facilisis dui nisl, ut malesuada nisl sodales et. Phasellus lobortis commodo ante, a rhoncus metus porttitor non.</p>
-               </div>
-               <!--end of icon-->
-  <!--          </div>
-            <!--end of col-4-->
-   <!--         <div class="col-md-4">
-               <div class="icon">
-                  <i class="fa fa-magic"></i>
-                  <h3>WE'VE MAGIC</h3>
-                  <p>Integer suscipit pellentesque varius. Aliquam vulputate ornare libero vitae faucibus. Proin gravida augue eu tellus tempus condimentum. Aliquam convallis ornare odio. Aenean ut erat dictum.</p>
-               </div>
-               <!--end of icon-->
-  <!--          </div>
-            <!--end of col-4-->
-  <!--          <div class="col-md-4">
-               <div class="icon icon-row-2">
-                  <i class="fa fa-code"></i>
-                  <h3>WE LOVE TO CODE</h3>
-                  <p>Integer suscipit pellentesque varius. Aliquam vulputate ornare libero vitae faucibus. Proin gravida augue eu tellus tempus condimentum. Aliquam convallis ornare odio. Aenean ut erat dictum.</p>
-               </div>
-               <!--end of icon-->
-   <!--         </div>
-            <!--end of col-4-->
-   <!--         <div class="col-md-4">
-               <div class="icon icon-row-2">
-                  <i class="fa fa-bolt"></i>
-                  <h3>WE'VE TECH MINDS</h3>
-                  <p>Integer suscipit pellentesque varius. Aliquam vulputate ornare libero vitae faucibus. Proin gravida augue eu tellus tempus condimentum. Aliquam convallis ornare odio. Aenean ut erat dictum.</p>
-               </div>
-               <!--end of icon-->
-   <!--         </div>
-            <!--end of col-4-->
-   <!--         <div class="col-md-4">
-               <div class="icon icon-row-2">
-                  <i class="fa fa-smile-o"></i>
-                  <h3>WE LOVE FUN</h3>
-                  <p>Integer suscipit pellentesque varius. Aliquam vulputate ornare libero vitae faucibus. Proin gravida augue eu tellus tempus condimentum. Aliquam convallis ornare odio. Aenean ut erat dictum.</p>
-               </div>
-               <!--end of icon-->
-   <!--         </div>
-            <!--end of col-4-->
-   <!--      </div>
-         <!--end of icon box-->
-  <!--    </div>
       <!--end of about page-->    
       <div class="about-team">
          <div class="row">
@@ -112,7 +53,7 @@
                </div>
                <!--end of head-->
                <div class="team">
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                      <div class="team-profile">
                         <img src="images/avatar.jpg" alt="profile" width="100%">
                         <div class="profile-details">
@@ -122,14 +63,14 @@
                               <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                            </ul>
                            <h4>NUWAN LAKSHITHA</h4>
-                           <p>DESIGNER</p>
+                           <p>CO-FOUNDER</p>
                         </div>
                         <!--end of profile-details-->
                      </div>
                      <!--end of one profie-->
                   </div>
                   <!--end of col-4-->
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                      <div class="team-profile">
                         <img src="images/avatar2.jpg" alt="profile" width="100%">
                         <div class="profile-details">
@@ -139,14 +80,14 @@
                               <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                            </ul>
                            <h4>OSANDA DEEMANTHA</h4>
-                           <p>FOUNDER</p>
+                           <p>CO-FOUNDER</p>
                         </div>
                         <!--end of profile-details-->
                      </div>
                      <!--end of one profie-->
                   </div>
                   <!--end of col-4-->
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                      <div class="team-profile">
                         <img src="images/avatar3.jpg" alt="profile" width="100%">
                         <div class="profile-details">
@@ -163,7 +104,7 @@
                      <!--end of one profie-->
                   </div>
                   <!--end of col-4-->
-                  <div class="col-md-4">
+                  <div class="col-md-3">
                      <div class="team-profile">
                         <img src="images/avatar4.jpg" alt="profile" width="100%">
                         <div class="profile-details">
@@ -173,7 +114,7 @@
                               <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                            </ul>
                            <h4>LAVAN RAJ</h4>
-                           <p>SUPPORTER</p>
+                           <p>CO_FOUNDER</p>
                         </div>
                         <!--end of profile-details-->
                      </div>
@@ -187,45 +128,7 @@
          </div>
          <!--end of row-->
       </div>
-      <!--end of about team-->     
-<!--      <div class="about-more-box">
-         <div class="col-md-12 nopadding">
-            <div class="col-md-3 nopadding">
-               <div class="icon">
-                  <i class="fa fa-coffee"></i>
-                  <h3>514 CUPS COFFEE</h3>
-               </div>
-               <!--end of icon-->
- <!--           </div>
-            <!--end of col-3-->
-  <!--          <div class="col-md-3 nopadding">
-               <div class="icon">
-                  <i class="fa fa-rocket"></i>
-                  <h3>874+ Projects</h3>
-               </div>
-               <!--end of icon-->
-  <!--          </div>
-            <!--end of col-3-->
-  <!--          <div class="col-md-3 nopadding">
-               <div class="icon">
-                  <i class="fa fa-coffee"></i>
-                  <h3>754 Happy clients</h3>
-               </div>
-               <!--end of icon-->
-  <!--          </div>
-            <!--end of col-3-->
-  <!--          <div class="col-md-3 nopadding">
-               <div class="icon">
-                  <i class="fa fa-globe"></i>
-                  <h3>45 countries served</h3>
-               </div>
-               <!--end of icon-->
-   <!--         </div>
-            <!--end of col-3-->
-  <!--       </div>
-         <!--end of col-md-12-->
-  <!--    </div>
-      <!--end of about more-->
+      <!--end of about team-->
       
       <?php
       require_once "footer.php";

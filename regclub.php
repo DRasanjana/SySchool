@@ -52,7 +52,7 @@
       </div>
       <!--end of top-->
       <div class="banner">
-         <h1>CLUB?SOCIETY REGISTRATION FORM</h1>
+         <h1>CLUB & SOCIETY REGISTRATION FORM</h1>
       </div>
       <!--end of banner-->  
       <div class="col-md-12">
