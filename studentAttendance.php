@@ -59,7 +59,7 @@
       <!--end of banner-->  
       <div class="col-md-12">
          <div class="address">
-            <form action="studentAttendance.php" method="POST"> 
+            <form action="markStdntAttendance.php" method="POST"> 
                <fieldset>
                   <ul>
                   <li class="col-md-3">Date</li>
@@ -106,53 +106,6 @@
          <!--end of address-->
       </div>
       <!--end of col-md-12-->
-
-
-<div class="col-md-12">
-         <div class="address">
-            <form action="submitAttendance.php" method="POST"> 
-               <div class="timetable" style="overflow-x:auto;">
-         <table>
-            <tr>
-               <th>Number</th>
-               <th>Name</th>
-               <th>IndexNumber</th>
-               <th>Attendance</th>
-           </tr>
-               <?php
-               $counter=0;
-               $serialNumber = 0;
-               while($row=mysqli_fetch_array($result)){
-                  $serialNumber++;
-               ?>
-               <tr>
-               <td> <?php echo $serialNumber; ?></td>
-               <td> <?php echo $row['name']; ?>
-               <input type="hidden" value="<?php echo $row['name']; ?>" name="name[]">
-               </td>
-               <td> <?php echo $row['admission_number']; ?>
-               <input type="hidden" value="<?php echo $row['admission_number']; ?>" name="admission_number[]">
-               </td>
-               <td> 
-               <input type="radio" name="attendance_status[<?php echo $counter;?>]" value="Present">Present
-               <input type="radio" name="attendance_status[<?php echo $counter;?>]" value="Absent">Absent
-               </td>
-            </tr>
-               <?php
-               $counter++;
-               }
-               ?>
-         </table>
-      </div>
-            <button type="submit">SUBMIT</button></div>            
-   </form>
-            </form>
-         </div>
-         <!--end of address-->
-      </div>
-      <!--end of col-md-12-->
-
-
 
       <div class="foot">
          <div class="row">
