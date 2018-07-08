@@ -27,47 +27,42 @@
    </head>
    <body class="bg">
       <div class="top top-bar-bg">
-         <?php include_once "header.php"?>
+       <?php include_once "header.php"?>
       </div>
       <!--end of top-->
       <div class="banner">
-         <h1>STUDENT REGISTRATION FORM</h1>
+         <h1>LEAVE APPLICATION FORM</h1>
       </div>
       <!--end of banner-->  
       <div class="col-md-12">
          <div class="address">
             <form action="submitstudent.php" method="POST"> 
                <fieldset>
-                  <legend>Personal Info</legend>
                      <?php
-
+session_start();
                      $link= mysqli_connect("localhost", "root", "", "syschool") or die("Something wrong with the server, try again later");
-               $sqll = "SELECT * FROM student WHERE AdmissionNumber='1010'";
-               $res = mysqli_query($link,$sqll);
-               if($row=mysqli_fetch_assoc($res)){
+                     $sqll = "SELECT * FROM teacher WHERE ReferenceNumber='{$_SESSION['user']}'";
+                     $res = mysqli_query($link,$sqll);
+                     if($row=mysqli_fetch_assoc($res)){
                   ?>
                   <ul>
-                  <li class="col-md-3">Admission Number</li>
-                  <li><input class="col-md-12" type="text" title="Enter valid Admission Number!" pattern="[0-9]{3,6}" name="admissionNumber" placeholder="Admission Number" value=<?php echo $row['AdmissionNumber']; ?> ></li>
-                  <li class="col-md-3">Full Name</li>
-                  <li><input class="col-md-12" type="text" title="Recheck your Name!" pattern="[a-zA-Z ]{4,}" name="fullName" placeholder="Full Name" value=<?php echo $row['FullName']; ?>></li>
-                  <li class="col-md-3">Name with Initials</li>
-                  <li><input class="col-md-12" type="text" title="Recheck your Name!" pattern="[a-zA-Z .]{4,}" name="nameWithInitials" placeholder="Name with initials" value=<?php echo $row['NameWithInitials']; ?>></li>
-                  <li class="col-md-3">Address</li>
-                  <li><input class="col-md-12" type="text" title="Recheck your Address!" pattern="[a-z0-9A-Z ,./-]{4,}" name="address" placeholder="Address" value=<?php echo $row['Address']; ?>></li>
-                  <li class="col-md-3">Date Of Birth</li>
-                  <li><input class="col-md-12" type="Date" name="dateOfBirth" value=<?php echo $row['DateOfBIrth']; ?>></li>
-                  <li class="col-md-3">Gender</li>
-                  <li>
-                  <select name="gender">
-                     <option value="male">Male</option>
-                     <option value="female">Female</option>
+                  <li class="col-md-3">Reference Number</li>
+                  <li><input class="col-md-12" type="text" disabled name="nicNumber" placeholder="NIC Number" value=<?php echo $row['ReferenceNumber']; ?>></li>
+                  <li class="col-md-3">Name With Initials</li>
+                  <li><input class="col-md-12" type="text" disabled name="contactNumber" value=<?php echo $row['NameWithInitials']; ?>></li>
+                  <li class="col-md-3">Type of Leave</li>
+                   <select name="leavetype">
+                     <option value="shortleave">Short Leave</option>
+                     <option value="halfday">Half Day</option>
+                     <option value="longleave">Long Leave</option>
                   </select>
+                  <li class="col-md-3">Leave Date</li>
+                  <li><input class="col-md-12" type="text" title="Recheck your Name!" pattern="[a-zA-Z ]{4,}" name="fullName" placeholder="Full Name" value=<?php echo $row['FullName']; ?>></li>
+                  <li class="col-md-3">Leave Until</li>
+                  <li><input class="col-md-12" type="text" title="Recheck your Name!" pattern="[a-zA-Z .]{4,}" name="nameWithInitials" placeholder="Name with initials" value=<?php echo $row['NameWithInitials']; ?>></li>
+                  <li class="col-md-3">Reason</li>
+                  <li><input class="col-md-12" type="text" title="Recheck your Address!" pattern="[a-z0-9A-Z ,./-]{4,}" name="address" placeholder="Address" value=<?php echo $row['Address']; ?>></li>                 
                   </li>
-                  <li class="col-md-3">NIC Number</li>
-                  <li><input class="col-md-12" type="text" title="Enter valid NIC Number!" pattern="[0-9]+[Vv]" name="nicNumber" placeholder="NIC Number" value=<?php echo $row['NICNumber']; ?>></li>
-                  <li class="col-md-3">Contact Number</li>
-                  <li><input class="col-md-12" type="text" name="contactNumber" placeholder="Contact Number" value=<?php echo $row['ContactNumber']; ?>></li>
                   <li class="col-md-3">Class</li>
                   <li><input class="col-md-12" type="text" name="class" placeholder="Class" value=<?php echo $row['Class']; ?>></li>
                   <li class="col-md-3">Father's Name</li>

@@ -18,6 +18,13 @@
 				$password=md5($_POST['password']);
 				$user = new User($username,$password,$type);
 				$database->addUser($user);
+				session_start();
+				$_SESSION['user'] = $username;
+				$link= mysqli_connect("localhost", "root", "", "syschool") or die("Something wrong with the server, try again later");
+				$resn=mysqli_query($link,"SELECT * FROM teacher WHERE ReferenceNumber='{$username}'");
+				if($rown=mysqli_fetch_assoc($resn)){
+					$_SESSION['uname']=$rown['NameWithInitials'];
+				}
 				header("Location: hometeacher.php");
 			}else{
 				Print '<script>alert("You have to register first!");</script>';

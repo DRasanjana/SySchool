@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -167,14 +166,14 @@
                      </a>
                   </div>
                   <div class="col-md-3">
-                     <a href="editprofile.php" id="show-project-a">
+                     <a href="" id="show-project-a">
                         <div class="img-box">
                            <div class="img">
                               <img src="images/gal/11.jpg" alt="gallery" >
                            </div>
                            <div class="img-show">
                               <div class="center">
-                                 <p><button type="submit" action="getdetails.php">SUBMIT</button></p>
+                                 <p><button class="update" type="submit" onclick="window.location.href='editprofile.php'">EDIT PROFILE</button></p>
                               </div>
                            </div>
                         </div>

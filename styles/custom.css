@@ -298,6 +298,26 @@ font-size: 14px;
 	color: #16a085;
 }
 
+.update{
+
+background-color: #16a085;
+color: #ffffff;
+padding:2px 11px;
+border:solid 1px #16a085;
+border-radius: 5px;
+float: right !important;
+font-size: 15px;
+font-weight: 550;
+text-decoration: none !important;
+-webkit-transition: 0.2s ease-in-out;
+-moz-transition: 0.2s ease-in-out;
+-o-transition: 0.2s ease-in-out;
+-safari-transition: 0.2s ease-in-out;
+transition: 0.2s ease-in-out;
+text-align: center;
+width: 100%;
+}
+
 /***************************************************************************/ 
 /************************5.Story*******************************************/
 /*************************************************************************/ 
@@ -447,6 +467,9 @@ text-align: center !important;
 display: block;
 padding: 0;
 margin: 0;
+}
+.img-show .center button{
+	text-align: center;
 }
 .img-box:hover .img-show{
 	opacity: 1;
