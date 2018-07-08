@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
       <meta charset="UTF-8">
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
       <meta name="description" content="">
@@ -30,81 +29,58 @@
       <?php
          session_start();
          $link= mysqli_connect("localhost", "root", "", "syschool") or die("Something wrong with the server, try again later");
-         $sqll = "SELECT * FROM teacher WHERE ReferenceNumber='{$_SESSION['user']}'";            
-         $res = mysqli_query($link,$sqll);            
-         if($row=mysqli_fetch_assoc($res)){
+         $sqll = "SELECT * FROM user WHERE Username='{$_SESSION['user']}'";            
+         $res = mysqli_query($link,$sqll);
+         if($row=mysqli_fetch_assoc($res)){     
       ?>
       <div class="top top-bar-bg">
-       <div class="logo">
+         <div class="logo">
             <a href="index.php">Sy<span>S</span>chool</a>
          </div>
          <!--end of logo-->
          <div class="login">
             <form>
-               <button><?php echo $_SESSION['uname']; ?></button>                           
+               <button><?php echo $_SESSION['uname']; ?></button>                       
             </form>
          </div>
          <!--end of login menu-->
          <div class="menu">
             <ul>
-               <li class="selected"><a href="hometeacher.php">HOME</a></li>
+               <li class="selected"><a href="homestudent.php">HOME</a></li>
                <li><a href="services.php">DOWNLOADS</a></li>
                <li><a href="about.php">ABOUT</a></li>
                <!--<li><a href="services.php">SERVICES</a></li>
                <li><a href="works.php">WORKS</a></li>
                <li ><a href="pricing.php"  >PRICING</a></li>-->
-               <li><a href="logout.php">LOGOUT</a></li>
+               <li><a  href="logout.php">LOGOUT</a></li>
             </ul>
          </div>
          <!--end of menu-->
       </div>
       <!--end of top-->
       <div class="banner">
-         <h1>LEAVE APPLICATION FORM</h1>
+         <h1>CHANGE PASSWORD</h1>
       </div>
       <!--end of banner-->  
       <div class="col-md-12">
          <div class="address">
-            <form method="POST"> 
+            <form action="passwordchange.php" method="POST"> 
                <fieldset>
                   <ul>
-                  <li class="col-md-3">Reference Number</li>
-                  <li><input class="col-md-12" type="text" disabled name="nicNumber" placeholder="NIC Number" value=<?php echo $row['ReferenceNumber']; ?>></li>
-                  <li class="col-md-3">Name With Initials</li>
-                  <li><input class="col-md-12" type="text" disabled name="contactNumber" value=<?php echo $row['NameWithInitials']; ?>></li>
-                  <li class="col-md-3">Type of Leave</li>
-                  <li>
-                  <select name="leavetype" id="leave" onChange="myFunction();">
-                     <option value="shortleave">Short Leave</option>
-                     <option value="halfday">Half Day</option>
-                     <option value="longleave">Long Leave</option>
-                  </select>
-                  </li>
-                  <li class="col-md-3">Leave Date</li>
-                  <li><input class="col-md-12" type="Date" title="Recheck your Leave Date!" name="leavedate"></li>
-                  <li class="col-md-3">Leave Until</li>
-                  <li><input class="col-md-12" type="Date" title="Recheck your Leave Date!" name="leaveuntil" id="leaveto" disabled></li>
-                  <li class="col-md-3">Reason</li>
-                  <li><textarea class="col-md-12" rows="3" type="text" name="address" placeholder="Reason" value=<?php echo $row['Address']; ?>></textarea></li>                 
+                  <li class="col-md-3">Current Password</li>
+                  <li><input class="col-md-12" type="Password" name="currentPassword" placeholder="Current Password"></li>
+                  <li class="col-md-3">Password</li>
+                  <li><input class="col-md-12" type="Password" name="newPassword" placeholder="New Password"></li>
+                  <li class="col-md-3">Confirm Password</li>
+                  <li><input class="col-md-12" type="Password" name="confirmPassword" placeholder="Confirm Password"></li>
                   </ul>
                </fieldset>
                <?php
-                  }
+      }
                ?>
                <div class="col-md-2"><button>CANCEL</button></div>
-               <button type="submit">REQUEST</button></div>            
+               <button type="submit">CHANGE</button></div>            
             </form>
-            <script>
-            function myFunction() {
-         
-         if($('#leave').val()!="longleave"){
-            document.getElementById("leaveto").disabled = true;
-         }else{
-            document.getElementById("leaveto").disabled = false;
-            
-         }
-      }
-</script>
          </div>
          <!--end of address-->
       </div>

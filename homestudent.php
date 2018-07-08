@@ -1,3 +1,9 @@
+<?php
+session_start();
+   if( $_SESSION['user']==''){
+      header("location: index.php");
+   }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +40,7 @@
          <!--end of logo-->
          <div class="login">
             <form>
-               <button>B L O D HEMACHANDRA</button>                           
+               <button><?php echo $_SESSION['uname']; ?></button>                       
             </form>
          </div>
          <!--end of login menu-->
@@ -46,7 +52,7 @@
                <!--<li><a href="services.php">SERVICES</a></li>
                <li><a href="works.php">WORKS</a></li>
                <li ><a href="pricing.php"  >PRICING</a></li>-->
-               <li><a  href="signup.php">LOGOUT</a></li>
+               <li><a  href="logout.php">LOGOUT</a></li>
             </ul>
          </div>
          <!--end of menu-->
@@ -151,14 +157,14 @@
                      </a>
                   </div>
                   <div class="col-md-3">
-                     <a href="#" id="show-project-a">
+                     <a href="" id="show-project-a">
                         <div class="img-box">
                            <div class="img">
                               <img src="images/gal/10.jpg" alt="gallery" >
                            </div>
                            <div class="img-show">
                               <div class="center">
-                                 <p>UPCOMING EVENTS</p>
+                                 <p><button class="update" type="submit" onclick="window.location.href='changepassword.php'">CHANGE PASSWORD</button></p>
                               </div>
                            </div>
                         </div>

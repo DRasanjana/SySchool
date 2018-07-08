@@ -26,8 +26,36 @@
       <script src="js/scroll.js"></script>    
    </head>
    <body class="bg">
+      <?php
+         session_start();
+         $link= mysqli_connect("localhost", "root", "", "syschool") or die("Something wrong with the server, try again later");
+         $sqll = "SELECT * FROM student WHERE AdmissionNumber='{$_SESSION['user']}'";            
+         $res = mysqli_query($link,$sqll);
+         if($row=mysqli_fetch_assoc($res)){     
+      ?>
       <div class="top top-bar-bg">
-         <?php include_once "header.php"?>
+         <div class="logo">
+            <a href="index.php">Sy<span>S</span>chool</a>
+         </div>
+         <!--end of logo-->
+         <div class="login">
+            <form>
+               <button><?php echo $_SESSION['uname']; ?></button>                       
+            </form>
+         </div>
+         <!--end of login menu-->
+         <div class="menu">
+            <ul>
+               <li class="selected"><a href="homestudent.php">HOME</a></li>
+               <li><a href="services.php">DOWNLOADS</a></li>
+               <li><a href="about.php">ABOUT</a></li>
+               <!--<li><a href="services.php">SERVICES</a></li>
+               <li><a href="works.php">WORKS</a></li>
+               <li ><a href="pricing.php"  >PRICING</a></li>-->
+               <li><a  href="signup.php">LOGOUT</a></li>
+            </ul>
+         </div>
+         <!--end of menu-->
       </div>
       <!--end of top-->
       <div class="banner">
@@ -39,13 +67,6 @@
             <form action="submitstudent.php" method="POST"> 
                <fieldset>
                   <legend>Personal Info</legend>
-                     <?php
-
-                     $link= mysqli_connect("localhost", "root", "", "syschool") or die("Something wrong with the server, try again later");
-               $sqll = "SELECT * FROM student WHERE AdmissionNumber='1010'";
-               $res = mysqli_query($link,$sqll);
-               if($row=mysqli_fetch_assoc($res)){
-                  ?>
                   <ul>
                   <li class="col-md-3">Admission Number</li>
                   <li><input class="col-md-12" type="text" title="Enter valid Admission Number!" pattern="[0-9]{3,6}" name="admissionNumber" placeholder="Admission Number" value=<?php echo $row['AdmissionNumber']; ?> ></li>
@@ -80,22 +101,11 @@
                   <li><input class="col-md-12" type="text" name="motherOccupation" placeholder="Occupation"></li>
                   </ul>
                </fieldset>
-               <fieldset>
-                  <legend>Change Password</legend>
-                  <ul>
-                  <li class="col-md-3">Username</li>
-                  <li><input class="col-md-12" type="text" name="username" placeholder="Username"></li>
-                  <li class="col-md-3">Password</li>
-                  <li><input class="col-md-12" type="Password" name="password" placeholder="Password"></li>
-                  <li class="col-md-3">Confirm Password</li>
-                  <li><input class="col-md-12" type="Password" name="confirmPassword" placeholder="Confirm Password"></li>
-                  </ul>
-               </fieldset>
                <?php
                   }
                ?>
                <div class="col-md-2"><button>CANCEL</button></div>
-               <button type="submit">EDIT</button></div>            
+               <button type="submit">UPDATE</button></div>            
             </form>
          </div>
          <!--end of address-->
