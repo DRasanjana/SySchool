@@ -35,6 +35,27 @@ class DBOperations{
         return $result->rowCount();
     }
 	
+	public function checkLogin($username,$password){
+		$password=md5($password);
+		echo $password;
+		$link= mysqli_connect("localhost", "root", "", "syschool") or die("Something wrong with the server, try again later");
+		$sqll = "SELECT * FROM user WHERE Username='{$username}' && Password='{$password}'";
+		$res = mysqli_query($link,$sqll);
+		if($row=mysqli_fetch_assoc($res)){
+			if($row['Type']=="student"){
+				header("location: homestudent.php");
+			}
+			elseif($row['Type']=="teacher"){
+				header("location: hometeacher.php");
+			}
+			elseif($row['Type']=="staff"){
+				header("location: homestaff.php");
+			}
+		}else{
+			Print '<script>alert("Password Mismatched!");</script>';
+			Print '<script>window.location.assign("index.php");</script>';
+		}
+    }
 
 	public function insertStudent($student){
 		$this->connect()->query("INSERT INTO student VALUES ('$student->admissionNumber','$student->fullName','$student->nameWithInitials','$student->address','$student->dateOfBirth','$student->gender','$student->nicNumber','$student->contactNumber','$student->class','$student->fatherName','$student->fatherOccupation','$student->motherName','$student->motherOccupation')");

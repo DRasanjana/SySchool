@@ -18,7 +18,7 @@
 				$password=md5($_POST['password']);				
 				$user = new User($username,$password,$type);
 				$database->addUser($user);
-				header("Location: homestudent.php");
+				header ("Location: homestudent.php");
 			}else{
 				Print '<script>alert("You have to register first!");</script>';
 				Print '<script>window.location.assign("registerstudent.php");</script>';
