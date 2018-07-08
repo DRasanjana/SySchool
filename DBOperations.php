@@ -43,6 +43,11 @@ class DBOperations{
 		$res = mysqli_query($link,$sqll);
 		if($row=mysqli_fetch_assoc($res)){
 			if($row['Type']=="student"){
+				$_SESSION['user'] = $username;
+				$resn=mysqli_query($link,"SELECT * FROM student WHERE AdmissionNumber='{$username}'");
+				if($rown=mysqli_fetch_assoc($resn)){
+					$_SESSION['uname']=$rown['NameWithInitials'];
+				}
 				header("location: homestudent.php");
 			}
 			elseif($row['Type']=="teacher"){
@@ -52,9 +57,13 @@ class DBOperations{
 					$_SESSION['uname']=$rown['NameWithInitials'];
 				}
 				header("location: hometeacher.php");
-
 			}
 			elseif($row['Type']=="staff"){
+				$_SESSION['user'] = $username;
+				$resn=mysqli_query($link,"SELECT * FROM staff WHERE ReferenceNumber='{$username}'");
+				if($rown=mysqli_fetch_assoc($resn)){
+					$_SESSION['uname']=$rown['NameWithInitials'];
+				}
 				header("location: homestaff.php");
 			}
 		}else{
@@ -72,6 +81,10 @@ class DBOperations{
 	}
 	public function insertStaffMember($staffmember){
 		$this->connect()->query("INSERT INTO staff VALUES ('$staffmember->referenceNumber','$staffmember->fullName','$staffmember->nameWithInitials','$staffmember->address','$staffmember->dateOfBirth','$staffmember->gender','$staffmember->nicNumber','$staffmember->contactNumber','$staffmember->fieldOfSpecialized','$staffmember->workingExperience','$staffmember->position')");
+	}
+
+	public function changePassword($user){
+		$this->connect()->query("UPDATE user SET Password='$user->password' WHERE Username='$user->username'");
 	}
 
 }

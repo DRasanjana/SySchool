@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
       <meta charset="UTF-8">
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
       <meta name="description" content="">
@@ -26,8 +27,36 @@
       <script src="js/scroll.js"></script>    
    </head>
    <body class="bg">
+      <?php
+         session_start();
+         $link= mysqli_connect("localhost", "root", "", "syschool") or die("Something wrong with the server, try again later");
+         $sqll = "SELECT * FROM teacher WHERE ReferenceNumber='{$_SESSION['user']}'";            
+         $res = mysqli_query($link,$sqll);            
+         if($row=mysqli_fetch_assoc($res)){
+      ?>
       <div class="top top-bar-bg">
-       <?php include_once "header.php"?>
+       <div class="logo">
+            <a href="index.php">Sy<span>S</span>chool</a>
+         </div>
+         <!--end of logo-->
+         <div class="login">
+            <form>
+               <button><?php echo $_SESSION['uname']; ?></button>                           
+            </form>
+         </div>
+         <!--end of login menu-->
+         <div class="menu">
+            <ul>
+               <li class="selected"><a href="hometeacher.php">HOME</a></li>
+               <li><a href="services.php">DOWNLOADS</a></li>
+               <li><a href="about.php">ABOUT</a></li>
+               <!--<li><a href="services.php">SERVICES</a></li>
+               <li><a href="works.php">WORKS</a></li>
+               <li ><a href="pricing.php"  >PRICING</a></li>-->
+               <li><a href="logout.php">LOGOUT</a></li>
+            </ul>
+         </div>
+         <!--end of menu-->
       </div>
       <!--end of top-->
       <div class="banner">
@@ -36,62 +65,46 @@
       <!--end of banner-->  
       <div class="col-md-12">
          <div class="address">
-            <form action="submitstudent.php" method="POST"> 
+            <form method="POST"> 
                <fieldset>
-                     <?php
-session_start();
-                     $link= mysqli_connect("localhost", "root", "", "syschool") or die("Something wrong with the server, try again later");
-                     $sqll = "SELECT * FROM teacher WHERE ReferenceNumber='{$_SESSION['user']}'";
-                     $res = mysqli_query($link,$sqll);
-                     if($row=mysqli_fetch_assoc($res)){
-                  ?>
                   <ul>
                   <li class="col-md-3">Reference Number</li>
                   <li><input class="col-md-12" type="text" disabled name="nicNumber" placeholder="NIC Number" value=<?php echo $row['ReferenceNumber']; ?>></li>
                   <li class="col-md-3">Name With Initials</li>
                   <li><input class="col-md-12" type="text" disabled name="contactNumber" value=<?php echo $row['NameWithInitials']; ?>></li>
                   <li class="col-md-3">Type of Leave</li>
-                   <select name="leavetype">
+                  <li>
+                  <select name="leavetype" id="leave" onChange="myFunction();">
                      <option value="shortleave">Short Leave</option>
                      <option value="halfday">Half Day</option>
                      <option value="longleave">Long Leave</option>
                   </select>
-                  <li class="col-md-3">Leave Date</li>
-                  <li><input class="col-md-12" type="text" title="Recheck your Name!" pattern="[a-zA-Z ]{4,}" name="fullName" placeholder="Full Name" value=<?php echo $row['FullName']; ?>></li>
-                  <li class="col-md-3">Leave Until</li>
-                  <li><input class="col-md-12" type="text" title="Recheck your Name!" pattern="[a-zA-Z .]{4,}" name="nameWithInitials" placeholder="Name with initials" value=<?php echo $row['NameWithInitials']; ?>></li>
-                  <li class="col-md-3">Reason</li>
-                  <li><input class="col-md-12" type="text" title="Recheck your Address!" pattern="[a-z0-9A-Z ,./-]{4,}" name="address" placeholder="Address" value=<?php echo $row['Address']; ?>></li>                 
                   </li>
-                  <li class="col-md-3">Class</li>
-                  <li><input class="col-md-12" type="text" name="class" placeholder="Class" value=<?php echo $row['Class']; ?>></li>
-                  <li class="col-md-3">Father's Name</li>
-                  <li><input class="col-md-12" type="text" title="Recheck Father's Name!" pattern="[a-zA-Z ]{4,}" name="fatherName" placeholder="Father's Name" value=<?php echo $row['FatherName']; ?>></li>
-                  <li class="col-md-3">Occupation</li>
-                  <li><input class="col-md-12" type="text" name="fatherOccupation" placeholder="Occupation" value=<?php echo $row['FatherOccupation']; ?>></li>
-                  <li class="col-md-3">Mother's Name</li>
-                  <li><input class="col-md-12" type="text" title="Recheck Mother's Name!" pattern="[a-zA-Z ]{4,}" name="motherName" placeholder="Mother's Name"></li>
-                  <li class="col-md-3">Occupation</li>
-                  <li><input class="col-md-12" type="text" name="motherOccupation" placeholder="Occupation"></li>
-                  </ul>
-               </fieldset>
-               <fieldset>
-                  <legend>Change Password</legend>
-                  <ul>
-                  <li class="col-md-3">Username</li>
-                  <li><input class="col-md-12" type="text" name="username" placeholder="Username"></li>
-                  <li class="col-md-3">Password</li>
-                  <li><input class="col-md-12" type="Password" name="password" placeholder="Password"></li>
-                  <li class="col-md-3">Confirm Password</li>
-                  <li><input class="col-md-12" type="Password" name="confirmPassword" placeholder="Confirm Password"></li>
+                  <li class="col-md-3">Leave Date</li>
+                  <li><input class="col-md-12" type="Date" title="Recheck your Leave Date!" name="leavedate"></li>
+                  <li class="col-md-3">Leave Until</li>
+                  <li><input class="col-md-12" type="Date" title="Recheck your Leave Date!" name="leaveuntil" id="leaveto" disabled></li>
+                  <li class="col-md-3">Reason</li>
+                  <li><textarea class="col-md-12" rows="3" type="text" name="address" placeholder="Reason" value=<?php echo $row['Address']; ?>></textarea></li>                 
                   </ul>
                </fieldset>
                <?php
                   }
                ?>
                <div class="col-md-2"><button>CANCEL</button></div>
-               <button type="submit">EDIT</button></div>            
+               <button type="submit">REQUEST</button></div>            
             </form>
+            <script>
+            function myFunction() {
+         
+         if($('#leave').val()!="longleave"){
+            document.getElementById("leaveto").disabled = true;
+         }else{
+            document.getElementById("leaveto").disabled = false;
+            
+         }
+      }
+</script>
          </div>
          <!--end of address-->
       </div>
