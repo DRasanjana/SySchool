@@ -56,15 +56,15 @@
                   <legend>Personal Info</legend>
                   <ul>
                   <li class="col-md-3" class="address">Reference Number</li>
-                  <li><input class="col-md-12" type="text" name="referenceNumber" placeholder="Reference Number"></li>
+                  <li><input class="col-md-12" type="text" title="Enter valid Reference Number!" pattern="[0-9]{3,6}" name="referenceNumber" placeholder="Reference Number"></li>
                   <li class="col-md-3">Full Name</li>
-                  <li><input class="col-md-12" type="text" name="fullName" placeholder="Full Name"></li>
+                  <li><input class="col-md-12" type="text" title="Recheck your Name!" pattern="[a-zA-Z ]{4,}" name="fullName" placeholder="Full Name"></li>
                   <li class="col-md-3">Name with Initials</li>
-                  <li><input class="col-md-12" type="text" name="nameWithInitials" placeholder="Name with initials"></li>
+                  <li><input class="col-md-12" type="text" title="Recheck your Name!" pattern="[a-zA-Z .]{4,}" name="nameWithInitials" placeholder="Name with initials"></li>
                   <li class="col-md-3">Address</li>
-                  <li><input class="col-md-12" type="text" name="address" placeholder="Address"></li>
+                  <li><input class="col-md-12" type="text" title="Recheck your Address!" pattern="[a-z0-9A-Z ,./-]{4,}" name="address" placeholder="Address"></li>
                   <li class="col-md-3">Date Of Birth</li>
-                  <li><input class="col-md-12" type="Date" name="dateOfBirth" placeholder="Date of Birth"></li>
+                  <li><input class="col-md-12" type="Date" name="dateOfBirth"></li>
                   <li class="col-md-3">Gender</li>
                   <li>
                   <select name="gender">
@@ -73,13 +73,22 @@
                   </select>
                   </li>
                   <li class="col-md-3">NIC Number</li>
-                  <li><input class="col-md-12" type="text" name="nicNumber" placeholder="NIC Number"></li>
+                  <li><input class="col-md-12" type="text" title="Enter valid NIC Number!" pattern="[0-9]+[Vv]" name="nicNumber" placeholder="NIC Number"></li>
                   <li class="col-md-3">Contact Number</li>
                   <li><input class="col-md-12" type="text" name="contactNumber" placeholder="Contact Number"></li>
                   <li class="col-md-3">Field Of Specialized</li>
                   <li><input class="col-md-12" type="text" name="fieldOfSpecialized" placeholder="Field Of Specialized"></li>
                   <li class="col-md-3">Working Experience</li>
-                  <li><input class="col-md-12" type="text" name="workingExperience" placeholder="Working Experience"></li>
+                  <li>
+                     <select name="workingExperience">
+                        <option value="below1yrs">Below 1 year</option>
+                        <option value="below2yrs">Below 2 years</option>
+                        <option value="below5yrs">Below 5 years</option>
+                        <option value="below10yrs">Below 10 years</option>
+                        <option value="below25yrs">Below 25 years</option>
+                        <option value="above25yrs">Above 25 years</option>
+                     </select>
+                  </li>
                   <li class="col-md-3">Position</li>
                   <li><input class="col-md-12" type="text" name="position" placeholder="Position"></li>
                </ul>

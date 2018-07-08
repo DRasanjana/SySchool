@@ -64,15 +64,15 @@
                   <legend>Personal Info</legend>
                   <ul>
                   <li class="col-md-3">Admission Number</li>
-                  <li><input class="col-md-12" type="text" name="admissionNumber" placeholder="Admission Number"></li>
+                  <li><input class="col-md-12" type="text" title="Enter valid Admission Number!" pattern="[0-9]{3,6}" name="admissionNumber" placeholder="Admission Number"></li>
                   <li class="col-md-3">Full Name</li>
-                  <li><input class="col-md-12" type="text" name="fullName" placeholder="Full Name"></li>
+                  <li><input class="col-md-12" type="text" title="Recheck your Name!" pattern="[a-zA-Z ]{4,}" name="fullName" placeholder="Full Name"></li>
                   <li class="col-md-3">Name with Initials</li>
-                  <li><input class="col-md-12" type="text" name="nameWithInitials" placeholder="Name with initials"></li>
+                  <li><input class="col-md-12" type="text" title="Recheck your Name!" pattern="[a-zA-Z .]{4,}" name="nameWithInitials" placeholder="Name with initials"></li>
                   <li class="col-md-3">Address</li>
-                  <li><input class="col-md-12" type="text" name="address" placeholder="Address"></li>
+                  <li><input class="col-md-12" type="text" title="Recheck your Address!" pattern="[a-z0-9A-Z ,./-]{4,}" name="address" placeholder="Address"></li>
                   <li class="col-md-3">Date Of Birth</li>
-                  <li><input class="col-md-12" type="Date" name="dateOfBirth" placeholder="Date of Birth"></li>
+                  <li><input class="col-md-12" type="Date" name="dateOfBirth"></li>
 <!--
                   <li><input class="radiogender" id="radiogender" type="radio" name="gender" value="Male"></li>
                   <li class="col-md-2">Male</li>                 
@@ -87,15 +87,15 @@
                   </select>
                   </li>
                   <li class="col-md-3">NIC Number</li>
-                  <li><input class="col-md-12" type="text" name="nicNumber" placeholder="NIC Number"></li>
+                  <li><input class="col-md-12" type="text" title="Enter valid NIC Number!" pattern="[0-9]+[Vv]" name="nicNumber" placeholder="NIC Number"></li>
                   <li class="col-md-3">Contact Number</li>
                   <li><input class="col-md-12" type="text" name="contactNumber" placeholder="Contact Number"></li>
                   <li class="col-md-3">Father's Name</li>
-                  <li><input class="col-md-12" type="text" name="fatherName" placeholder="Father's Name"></li>
+                  <li><input class="col-md-12" type="text" title="Recheck Father's Name!" pattern="[a-zA-Z ]{4,}" name="fatherName" placeholder="Father's Name"></li>
                   <li class="col-md-3">Occupation</li>
                   <li><input class="col-md-12" type="text" name="fatherOccupation" placeholder="Occupation"></li>
                   <li class="col-md-3">Mother's Name</li>
-                  <li><input class="col-md-12" type="text" name="motherName" placeholder="Mother's Name"></li>
+                  <li><input class="col-md-12" type="text" title="Recheck Mother's Name!" pattern="[a-zA-Z ]{4,}" name="motherName" placeholder="Mother's Name"></li>
                   <li class="col-md-3">Occupation</li>
                   <li><input class="col-md-12" type="text" name="motherOccupation" placeholder="Occupation"></li>
                   </ul>
@@ -190,7 +190,7 @@
                            <div class="contact-home">
                               <h4><i class="fa fa-envelope"></i></h4>
                               <h3>contact@gmail.com</h3>
-                              <h3> contact@syschool.com</h3>
+                              <h3>contact@syschool.com</h3>
                            </div>
                            <!--end of contact home-->
                         </div>
