@@ -23,15 +23,28 @@ class DBOperations{
 		}
 	}
 
+	public function addUser($user){
+		$this->connect()->query("INSERT INTO user VALUES ('$user->username','$user->password','$user->type')");
+	}
+
+	public function checkExistance($username,$type){
+		if($type=='student'){$field='admissionNumber';}
+		elseif($type=='teacher'){$field='referenceNumber';}
+		elseif($type=='staff'){$field='referenceNumber';}
+		$result = $this->connect()->query("SELECT * FROM $type WHERE $field=$username");
+        return $result->rowCount();
+    }
+	
+
 	public function insertStudent($student){
-		$this->connect()->query("INSERT INTO student VALUES ('$student->admissionNumber','$student->fullName','$student->nameWithInitials','$student->address','$student->dateOfBirth','$student->gender','$student->nicNumber','$student->contactNumber','$student->fatherName','$student->fatherOccupation','$student->motherName','$student->motherOccupation','$student->username','$student->password')");
+		$this->connect()->query("INSERT INTO student VALUES ('$student->admissionNumber','$student->fullName','$student->nameWithInitials','$student->address','$student->dateOfBirth','$student->gender','$student->nicNumber','$student->contactNumber','$student->class','$student->fatherName','$student->fatherOccupation','$student->motherName','$student->motherOccupation')");
 	}
 
 	public function insertTeacher($teacher){
-		$this->connect()->query("INSERT INTO teacher VALUES ('$teacher->referenceNumber','$teacher->fullName','$teacher->nameWithInitials','$teacher->address','$teacher->dateOfBirth','$teacher->gender','$teacher->nicNumber','$teacher->contactNumber','$teacher->fieldOfSpecialized','$teacher->workingExperience','$teacher->position','$teacher->username','$teacher->password')");
+		$this->connect()->query("INSERT INTO teacher VALUES ('$teacher->referenceNumber','$teacher->fullName','$teacher->nameWithInitials','$teacher->address','$teacher->dateOfBirth','$teacher->gender','$teacher->nicNumber','$teacher->contactNumber','$teacher->fieldOfSpecialized','$teacher->workingExperience','$teacher->position')");
 	}
 	public function insertStaffMember($staffmember){
-		$this->connect()->query("INSERT INTO teacher VALUES ('$staffmember->referenceNumber','$staffmember->fullName','$staffmember->nameWithInitials','$staffmember->address','$staffmember->dateOfBirth','$staffmember->gender','$staffmember->nicNumber','$staffmember->contactNumber','$staffmember->fieldOfSpecialized','$staffmember->workingExperience','$staffmember->position','$staffmember->username','$staffmember->password')");
+		$this->connect()->query("INSERT INTO staff VALUES ('$staffmember->referenceNumber','$staffmember->fullName','$staffmember->nameWithInitials','$staffmember->address','$staffmember->dateOfBirth','$staffmember->gender','$staffmember->nicNumber','$staffmember->contactNumber','$staffmember->fieldOfSpecialized','$staffmember->workingExperience','$staffmember->position')");
 	}
 
 }

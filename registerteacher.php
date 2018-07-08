@@ -10,7 +10,7 @@
       <meta name="robots" content="index, follow" >
       <meta name="googlebot" content="noodp" >
       <meta name="slurp" content="noydir">
-      <title>SySchool - Student SignUp </title>
+      <title>SySchool - Teacher SignUp </title>
       <link rel="icon" href="images/fav.png" type="image/gif" sizes="16x16">
       <!-- ********************* CSS  LINKS ********************* -->
       <link href="styles/custom.css" rel="stylesheet">
@@ -29,50 +29,67 @@
       <div class="top top-bar-bg">
          <?php include_once "header.php"?>
       </div>
-      <!--end of top-->
+      <!--end of top--> 
       <div class="banner">
-         <h1>STUDENT SIGNUP</h1>
+         <h1>TEACHER REGISTRATION FORM</h1>
       </div>
       <!--end of banner-->  
       <div class="col-md-12">
          <div class="address">
-            <form action="createstudentaccount.php" method="POST"> 
+            <form action="submitteacher.php" method="POST">
                <fieldset>
-                  <legend>Create an Account</legend>
+                  <legend>Personal Info</legend>
                   <ul>
-                  <li class="col-md-3">Username</li>
-                  <li><input class="col-md-12" type="text" name="username" placeholder="Username"></li>
-                  <li class="col-md-3">Password</li>
-                  <li><input class="col-md-12" type="Password" name="password" placeholder="Password"></li>
-                  <li class="col-md-3">Confirm Password</li>
-                  <li><input class="col-md-12" type="Password" name="confirmPassword" placeholder="Confirm Password"></li>
-                  </ul>
-               </fieldset>
-               <br>
-               <fieldset>
-                  <legend>Payment Info</legend>
-                  <ul>
-                  <li class="col-md-3">Payment Method</li>
-                  <li class="col-md-9">
-                  <select>
-                     <option>Cash</option>
-                     <option>Bank Card</option>
+                  <li class="col-md-3" class="address">Reference Number</li>
+                  <li><input class="col-md-12" type="text" title="Enter valid Reference Number!" pattern="[0-9]{3,6}" name="referenceNumber" placeholder="Reference Number"></li>
+                  <li class="col-md-3">Full Name</li>
+                  <li><input class="col-md-12" type="text" title="Recheck your Name!" pattern="[a-zA-Z ]{4,}" name="fullName" placeholder="Full Name"></li>
+                  <li class="col-md-3">Name with Initials</li>
+                  <li><input class="col-md-12" type="text" title="Recheck your Name!" pattern="[a-zA-Z .]{4,}" name="nameWithInitials" placeholder="Name with initials"></li>
+                  <li class="col-md-3">Address</li>
+                  <li><input class="col-md-12" type="text" title="Recheck your Address!" pattern="[a-z0-9A-Z ,./-]{4,}" name="address" placeholder="Address"></li>
+                  <li class="col-md-3">Date Of Birth</li>
+                  <li><input class="col-md-12" type="Date" name="dateOfBirth"></li>
+                  <li class="col-md-3">Gender</li>
+                  <li>
+                  <select name="gender">
+                     <option value="male">Male</option>
+                     <option value="female">Female</option>
                   </select>
                   </li>
-                  <li class="col-md-3">Amount</li>
-                  <li><input class="col-md-12" type="text" name="" placeholder="Amount"></li>
-                  <li class="col-md-3">Payment Slip Invoice No</li>
-                  <li><input class="col-md-12" type="text" name="" placeholder="Payment Slip Invoice Number"></li>
+                  <li class="col-md-3">NIC Number</li>
+                  <li><input class="col-md-12" type="text" title="Enter valid NIC Number!" pattern="[0-9]+[Vv]" name="nicNumber" placeholder="NIC Number"></li>
+                  <li class="col-md-3">Contact Number</li>
+                  <li><input class="col-md-12" type="text" name="contactNumber" placeholder="Contact Number"></li>
                   </ul>
                </fieldset>
-               <button type="submit">SUBMIT</button></div>            
-   </form>
+               <fieldset>
+                  <legend>Career Details</legend>
+                  <ul>
+                  <li class="col-md-3">Field Of Specialized</li>
+                  <li><input class="col-md-12" type="text" name="fieldOfSpecialized" placeholder="Field Of Specialized"></li>
+                  <li class="col-md-3">Working Experience</li>
+                  <li>
+                     <select name="workingExperience">
+                        <option value="below1yrs">Below 1 year</option>
+                        <option value="below2yrs">Below 2 years</option>
+                        <option value="below5yrs">Below 5 years</option>
+                        <option value="below10yrs">Below 10 years</option>
+                        <option value="below25yrs">Below 25 years</option>
+                        <option value="above25yrs">Above 25 years</option>
+                     </select>
+                  </li>
+                  <li class="col-md-3">Position</li>
+                  <li><input class="col-md-12" type="text" name="position" placeholder="Position"></li>
+               </ul>
+               </fieldset>
+               
+               <div class="col-md-2"><button>PRINT</button></div>
+               <div class="col-md-10"><button type="submit">SUBMIT</button></div>
             </form>
          </div>
          <!--end of address-->
       </div>
-      <!--end of col-md-12-->
-
       <div class="foot">
          <div class="row">
             <div class="col-md-12 ">
@@ -126,7 +143,7 @@
                            <div class="contact-home">
                               <h4><i class="fa fa-envelope"></i></h4>
                               <h3>contact@gmail.com</h3>
-                              <h3>contact@syschool.com</h3>
+                              <h3> contact@syschool.com</h3>
                            </div>
                            <!--end of contact home-->
                         </div>

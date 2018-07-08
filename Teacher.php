@@ -12,10 +12,8 @@ class Teacher{
 	public $fieldOfSpecialized;
 	public $workingExperience;
 	public $position;
-	public $username;
-	public $password;
 
-	public function __construct($referenceNumber,$fullName,$nameWithInitials,$address,$dateOfBirth,$gender,$nicNumber,$contactNumber,$fieldOfSpecialized,$workingExperience,$position,$username,$password){
+	public function __construct($referenceNumber,$fullName,$nameWithInitials,$address,$dateOfBirth,$gender,$nicNumber,$contactNumber,$fieldOfSpecialized,$workingExperience,$position){
 		$this->referenceNumber=$referenceNumber;
 		$this->fullName=$fullName;
 		$this->nameWithInitials=$nameWithInitials;
@@ -27,7 +25,5 @@ class Teacher{
 		$this->fieldOfSpecialized=$fieldOfSpecialized;
 		$this->workingExperience=$workingExperience;
 		$this->position=$position;
-		$this->username=$username;
-		$this->password=$password;
 	}
 }
