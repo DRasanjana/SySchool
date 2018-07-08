@@ -61,9 +61,7 @@
                   <li><input class="col-md-12" type="text" name="" placeholder="Account/Card Name" required></li>
                   </ul>
                </fieldset>
-            
-               <div class="col-md-2"><button>PRINT</button></div>
-               <div class="col-md-10"><button type="submit">SUBMIT</button></div>
+               <div class="col-md-12"><button type="submit">SUBMIT</button></div>
 
             </form>
          </div>

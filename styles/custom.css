@@ -970,8 +970,11 @@ color: #ffffff;
 /************************10.SignUp page***********************************/
 /*************************************************************************/ 
 .signup-home{
-padding-top: 40px;
+	background-image: url(../images/gal/80.png);
+background-size: cover;
+padding-top: 60px;
 padding-left: 40px;
+padding-bottom: 80px;
 width: 100%;
 overflow: hidden;
 }
