@@ -66,19 +66,6 @@
             <form action="selectAssignment.php" method="POST"> 
                   <ul>
 
-                     <li class="col-md-3">Class</li>
-                  <li>
-                  <select name="class">
-                     <option value="A">A</option>
-                     <option value="B">B</option>
-                     <option value="C">C</option>
-                     <option value="D">D</option>
-                     <option value="E">E</option>
-                     <option value="F">F</option>
-                     <option value="G">G</option>
-                  </select>
-                  </li>
-                 
 
                   <li class="col-md-3">Grade</li>
                   <li>
@@ -94,8 +81,20 @@
                   </select>
                   </li>
 
-
                   
+                     <li class="col-md-3">Class</li>
+                  <li>
+                  <select name="class">
+                     <option value="A">A</option>
+                     <option value="B">B</option>
+                     <option value="C">C</option>
+                     <option value="D">D</option>
+                     <option value="E">E</option>
+                     <option value="F">F</option>
+                     <option value="G">G</option>
+                  </select>
+                  </li>
+                                  
 
                   <li class="col-md-3">Subject</li>
                   <li>
@@ -112,34 +111,6 @@
                   </ul>
                   
 
-
-         <?php
-         include_once "dbconnect.php";
-         $sql = "SELECT * FROM Assignments";
-         $qry = $con->query($sql);
-         echo "<label>Assignment Name :</label>";
-         echo "<select name='assignmentname' onchange='this.form.submit()'>";
-         if($qry->num_rows>0){
-            while($row = $qry->fetch_assoc()){
-               $assignment = unserialize($row['val']);
-               if($_POST['class']==$assignment->getClass() && $assignment->getGrade() == $_POST['grade']){
-                  if (isset($_POST['assignmentname']) && $_POST['assignmentname'] == $assignment->getAssigmentname()){
-                                      $selected = "selected";
-                                  } else {
-                                      $selected = "";
-                                  }
-                                  if (!isset($_POST['assignmentname'])){
-                                      $_POST['assignmentname'] = $assignment->getAssignmentname();
-                                  }
-                                  echo "<option value='".$assignment->getAssignmentname()."' $selected>";
-                              }
-                          }
-                      }else{
-                          echo "<option value='0' selected hidden></option>";
-                      }
-                      echo "</select><br><br>";
-               
-              ?>
 
               <button type="submit">NEXT</button></div>
 
