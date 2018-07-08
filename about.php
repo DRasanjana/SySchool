@@ -40,7 +40,6 @@
 
       <div class="banner">
          <h1>ABOUT US</h1>
-         <p>      Team colourPlus</p>
       </div>
       <!--end of banner-->
       <!--end of about page-->    

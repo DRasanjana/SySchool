@@ -36,7 +36,7 @@ elseif ($c=="signup.php") {
             <form action="checklogin.php" method="POST">
                <input type="text" title="User Name" name="username" placeholder="User Name">
                <input type="Password" title="Password" name="password" placeholder="Password">
-               <button type="submit" name="login">LOGIN </button>                           
+               <button type="submit" name="login">LOGIN</button>                           
             </form>
          </div>
          <!--end of login menu-->

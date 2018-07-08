@@ -36,8 +36,8 @@ class DBOperations{
     }
 	
 	public function checkLogin($username,$password){
+		session_start();
 		$password=md5($password);
-		echo $password;
 		$link= mysqli_connect("localhost", "root", "", "syschool") or die("Something wrong with the server, try again later");
 		$sqll = "SELECT * FROM user WHERE Username='{$username}' && Password='{$password}'";
 		$res = mysqli_query($link,$sqll);
@@ -46,7 +46,13 @@ class DBOperations{
 				header("location: homestudent.php");
 			}
 			elseif($row['Type']=="teacher"){
+				$_SESSION['user'] = $username;
+				$resn=mysqli_query($link,"SELECT * FROM teacher WHERE ReferenceNumber='{$username}'");
+				if($rown=mysqli_fetch_assoc($resn)){
+					$_SESSION['uname']=$rown['NameWithInitials'];
+				}
 				header("location: hometeacher.php");
+
 			}
 			elseif($row['Type']=="staff"){
 				header("location: homestaff.php");
