@@ -10,7 +10,6 @@
 </head>
 <body>
 	<?php
-		if($_POST["password"] == $_POST["confirmPassword"]){
 			$referenceNumber=$_POST['referenceNumber'];
 			$fullName=$_POST['fullName'];
 			$nameWithInitials=$_POST['nameWithInitials'];
@@ -22,26 +21,19 @@
 			$fieldOfSpecialized=$_POST['fieldOfSpecialized'];
 			$workingExperience=$_POST['workingExperience'];
 			$position=$_POST['position'];
-			$username=$_POST['username'];
-			$password=md5($_POST['password']);
 
 			$dob=explode("-",$dateOfBirth);
 			$date =time()-mktime(0,0,0,$dob[2],$dob[1],$dob[0]);
-			$age=$date/31536000;
-			echo $age;
-			if($age<18){
+			$age=$date/31536000;			if($age<18){
 				Print '<script>alert("Recheck your Date of Birth!");</script>';
-				Print '<script>window.location.assign("signupteacher.php");</script>';
+				Print '<script>window.location.assign("registerteacher.php");</script>';
 			}else{
 				$database = new DBOperations();
-				$teacher = new Teacher($referenceNumber,$fullName,$nameWithInitials,$address,$dateOfBirth,$gender,$nicNumber,$contactNumber,$fieldOfSpecialized,$workingExperience,$position,$username,$password);
+				$teacher = new Teacher($referenceNumber,$fullName,$nameWithInitials,$address,$dateOfBirth,$gender,$nicNumber,$contactNumber,$fieldOfSpecialized,$workingExperience,$position);
 				$database->insertTeacher($teacher);
-				header ("Location:hometeacher.php");
-			}
-		}else{
-			Print '<script>alert("Incorrect password!");</script>';
+			Print '<script>confirm("Do you want to create an account?");</script>'; 
 			Print '<script>window.location.assign("signupteacher.php");</script>';
-		}
+			}
 	?>
 
 </body>

@@ -13,10 +13,8 @@ class Student{
 	public $fatherOccupation;
 	public $motherName;
 	public $motherOccupation;
-	public $username;
-	public $password;
 
-	public function __construct($admissionNumber,$fullName,$nameWithInitials,$address,$dateOfBirth,$gender,$nicNumber,$contactNumber,$fatherName,$fatherOccupation,$motherName,$motherOccupation,$username,$password){
+	public function __construct($admissionNumber,$fullName,$nameWithInitials,$address,$dateOfBirth,$gender,$nicNumber,$contactNumber,$fatherName,$fatherOccupation,$motherName,$motherOccupation){
 		$this->admissionNumber=$admissionNumber;
 		$this->fullName=$fullName;
 		$this->nameWithInitials=$nameWithInitials;
@@ -29,7 +27,5 @@ class Student{
 		$this->fatherOccupation=$fatherOccupation;
 		$this->motherName=$motherName;
 		$this->motherOccupation=$motherOccupation;
-		$this->username=$username;
-		$this->password=$password;
 	}
 }

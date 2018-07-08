@@ -41,11 +41,11 @@
                   <legend>Create an Account</legend>
                   <ul>
                   <li class="col-md-3">Username</li>
-                  <li><input class="col-md-12" type="text" name="username" placeholder="Username" required="required" ></li>
+                  <li><input class="col-md-12" type="text" name="username" placeholder="Username"></li>
                   <li class="col-md-3">Password</li>
-                  <li><input class="col-md-12" type="Password" name="password" placeholder="Password" required="required"></li>
+                  <li><input class="col-md-12" type="Password" name="password" placeholder="Password"></li>
                   <li class="col-md-3">Confirm Password</li>
-                  <li><input class="col-md-12" type="Password" name="confirmPassword" placeholder="Confirm Password" required="required"></li>
+                  <li><input class="col-md-12" type="Password" name="confirmPassword" placeholder="Confirm Password"></li>
                   </ul>
                </fieldset>
                <br>

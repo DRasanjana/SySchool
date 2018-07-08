@@ -35,7 +35,7 @@
       <!--end of banner-->  
       <div class="col-md-12">
          <div class="address">
-            <form action="submitteacher.php" method="POST">
+            <form action="submitstaff.php" method="POST">
                <fieldset>
                   <legend>Personal Info</legend>
                   <ul>

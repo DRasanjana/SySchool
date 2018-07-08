@@ -36,7 +36,7 @@
       <!--end of banner-->  
       <div class="col-md-12">
          <div class="address">
-            <form action="submitteacher.php" method="POST">
+            <form action="createteacheraccount.php" method="POST">
                <fieldset>
                   <legend>Create an Account</legend>
                   <ul>

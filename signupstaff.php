@@ -36,7 +36,7 @@
       <!--end of banner-->  
       <div class="col-md-12">
          <div class="address">
-            <form action="submitstaffmember.php" method="POST">
+            <form action="createstaffaccount.php" method="POST">
                <fieldset>
                   <legend>Create an Account</legend>
                   <ul>
