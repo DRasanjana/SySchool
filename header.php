@@ -13,16 +13,16 @@ $colorS = 'black';
 if ($c=="index.php") {
    $colorH = '#16a085';
 }
-elseif ($c=="services.php") {
+elseif ($c=="downloads.php") {
    $colorD = '#16a085';
 }
 elseif ($c=="about.php") {
    $colorA = '#16a085';
 }
-elseif ($c=="registration.php") {
+elseif ($c=="registration.php" || $c=="registerstudent.php" || $c=="registerteacher.php" || $c=="registerstaff.php") {
    $colorR = '#16a085';
 }
-elseif ($c=="signup.php") {
+elseif ($c=="signup.php" || $c=="signupstudent.php" || $c=="signupteacher.php" || $c=="signupstaff.php") {
    $colorS = '#16a085';
 }
 
@@ -34,8 +34,8 @@ elseif ($c=="signup.php") {
          <!--end of logo-->
          <div class="login">
             <form action="checklogin.php" method="POST">
-               <input type="text" title="User Name" name="username" placeholder="User Name">
-               <input type="Password" title="Password" name="password" placeholder="Password">
+               <input type="text" title="User Name" name="username" placeholder="User Name" required>
+               <input type="Password" title="Password" name="password" placeholder="Password" required>
                <button type="submit" name="login">LOGIN</button>                           
             </form>
          </div>
@@ -43,12 +43,9 @@ elseif ($c=="signup.php") {
          <div class="menu">
             <ul>
                <li><a style="color: <?php echo $colorH; ?>" href="index.php">HOME</a></li>
-               <li><a style="color: <?php echo $colorD; ?>" href="services.php">DOWNLOADS</a></li>
+               <li><a style="color: <?php echo $colorD; ?>" href="downloads.php">DOWNLOADS</a></li>
                <li><a style="color: <?php echo $colorA; ?>" href="about.php">ABOUT</a></li>
-               <!--<li ><a style='color: white' href="services.php">SERVICES</a></li>
-               <li><a href="works.php">WORKS</a></li>
-               <li ><a href="pricing.php"  >PRICING</a></li>-->
-               <li class="selected" ><a  style="color: <?php echo $colorR; ?>" href="registration.php">REGISTER</a></li>
+               <li><a style="color: <?php echo $colorR; ?>" href="registration.php">REGISTER</a></li>
                <li><a style="color: <?php echo $colorS; ?>" href="signup.php">SIGN UP</a></li>
             </ul>
          </div>

@@ -1,5 +1,5 @@
 <?php
-	include("viewSTeacherList.php");
+	include("viewTeacherList.php");
 ?>
    
 <!DOCTYPE html>
@@ -63,7 +63,7 @@
       <!--end of banner-->  
       <div class="col-md-12">
          <div class="address">
-            <form action="submitAttendance.php" method="POST"> 
+            <form action="submitteacherAttendence.php" method="POST"> 
                <div class="timetable" style="overflow-x:auto;">
          <table>
          	<tr>

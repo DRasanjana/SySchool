@@ -1,21 +1,5 @@
 <?php
-	include_once "dbconnect.php";
-if($_SERVER['REQUEST_METHOD'] == "POST"){
-
-	$date=explode("-",$_POST['Date']);
-
-	$dateDiff = time()-mktime(0,0,0,$date[2],$date[1],$date[0]);
-	if($dateDiff>=0){
-		$grade=$_POST['grade'];
-	    $class=$_POST['class'];
-	    $classTable=$grade.$class;
-		$result = mysqli_query($con, "SELECT * FROM attendence WHERE date='$date' AND class='$classTable'");
-	}
-	else{
-		Print '<script>alert("Incorrect Date!");</script>';
-		header("location:studentattendance.php");
-	}
-}
+	include("viewStudentList.php");
 ?>
    
 <!DOCTYPE html>
@@ -30,7 +14,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
       <meta name="robots" content="index, follow" >
       <meta name="googlebot" content="noodp" >
       <meta name="slurp" content="noydir">
-      <title>SySchool - Student SignUp </title>
+      <title>SySchool - Student Attendence </title>
       <link rel="icon" href="images/fav.png" type="image/gif" sizes="16x16">
       <!-- ********************* CSS  LINKS ********************* -->
       <link href="styles/custom.css" rel="stylesheet">
@@ -74,47 +58,56 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
       </div>
       <!--end of top-->
       <div class="banner">
-         <h1>VIEW STUDENT ATTENDENCE DETAILS </h1>
+         <h1>STUDENT ATTENDENCE</h1>
       </div>
       <!--end of banner-->  
       <div class="col-md-12">
          <div class="address">
-            <form method="POST"> 
+            <form action="submitAttendence.php" method="POST"> 
                <div class="timetable" style="overflow-x:auto;">
-         <table>
-         	<tr>
+               <table>
+            	<tr>
                <th>Number</th>
-               <th>Admission Number</th>
-               <th>Attendance</th>
-           </tr>
+               <th>Name</th>
+               <th>IndexNumber</th>
+               <th>Attendence</th>
+               </tr>
                <?php
-        	   $counter=0;
+               $counter=0;
                $serialNumber = 0;
                while($row=mysqli_fetch_array($result)){
                	$serialNumber++;
                ?>
                <tr>
                <td> <?php echo $serialNumber; ?></td>
-
+               <td> <?php echo $row['name']; ?>
+               <input type="hidden" value="<?php echo $row['name']; ?>" name="name[]">
+               </td>
                <td> <?php echo $row['admission_number']; ?>
                <input type="hidden" value="<?php echo $row['admission_number']; ?>" name="admission_number[]">
                </td>
-
-               <td> <?php echo $row['attended']; ?>
-               <input type="hidden" value="<?php echo $row['attended']; ?>" name="attended[]">
+               <td> 
+               <input type="radio" name="attendance_status[<?php echo $counter;?>]" value="Present" required>Present
+               <input type="radio" name="attendance_status[<?php echo $counter;?>]" value="Absent" required>Absent
                </td>
-               
-            </tr>
+               </tr>
                <?php
                $counter++;
                }
                ?>
-         </table>
-      </div>         
-   </form>
-         </div>
-         <!--end of address-->
-      </div>
-      <!--end of col-md-12-->
+               </table>
+               </div>
+            <button type="submit">SUBMIT</button></div>            
+         </form>
+      </form>
+   </div>
+   <!--end of address-->
+</div>
+<!--end of col-md-12-->
+
+<?php
+   require_once "footer.php";
+?>
    </body>
-   </html>
+</html>
+

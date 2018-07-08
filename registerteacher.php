@@ -13,8 +13,7 @@
       <title>SySchool - Teacher SignUp </title>
       <link rel="icon" href="images/fav.png" type="image/gif" sizes="16x16">
       <!-- ********************* CSS  LINKS ********************* -->
-      <link href="styles/cus
-      tom.css" rel="stylesheet">
+      <link href="styles/custom.css" rel="stylesheet">
       <link href="styles/mobile.css" rel="stylesheet">
       <link href="styles/bootstrap/bootstrap.min.css" rel="stylesheet">
       <link href="styles/font-awesome.css" rel="stylesheet">

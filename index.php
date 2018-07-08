@@ -57,7 +57,7 @@
       ?>
       </div>
       <?php
-      require_once "footermin.php";
+      require_once "footer.php";
       ?>  
    </body>
 </html>

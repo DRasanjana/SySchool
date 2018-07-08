@@ -522,13 +522,13 @@ background-image: url('../images/banner.jpg');
 width: 100%;
 }
 .sos{
-padding-bottom: 5px;
-border-bottom: solid 1px #ffffff;
+padding-bottom: 3px;
+border-bottom: solid 2px #ffffff;
 
 }
  .circle{
-height: 60px;
-width: 60px;
+height: 40px;
+width: 40px;
 background-color: #ffffff;
 border-radius: 100%;
 -webkit-transition: 0.2s ease-in-out;
@@ -542,30 +542,32 @@ border:solid 2px #ffffff;
 color: #16a085;
 display: block;
 text-align: center;
-font-size: 25px;
-padding-top: 15px;
+font-size: 18px;
+padding-top: 9px;
 }
 .sos ul{
 margin: 0;
-padding:0;
+padding-left: 100px;
+padding-bottom: 0;
+margin-bottom: 0;
 clear: both;
 text-align: center;
 }
 .sos ul li{
 list-style-type: none;
 display: inline-block;
-padding: 5px 30px;
+padding: 4px 20px;
 }
 .con-home{
-padding-top: 5px;
+padding-top: 3px;
 }
 .contact-home{
-padding: 5px;
+padding: 3px;
 }
 .contact-home h4{
 color: #ffffff;
 text-align: center;
-font-size: 25px;
+font-size: 15px;
 }
 .contact-home h3{
 color: #ffffff;
@@ -575,7 +577,7 @@ margin-top: 0;
 }
 .circle:hover{
 background-color: transparent;
-border:solid 2px #ffffff;
+border:solid 1px #ffffff;
 }
 .circle:hover a{
 color: #ffffff;
@@ -612,12 +614,13 @@ border-left: solid 2px #ffffff !important;
 }
 .head3 h3{
 color: #ffffff;
-font-weight: 600;
+font-weight: 550;
 text-transform: uppercase;
-letter-spacing: 5px;
+letter-spacing: 4px;
 margin: 0;
-padding-bottom: 20px;
-font-size: 4em;
+padding-bottom: 10px;
+padding-left: 110px;
+font-size: 3em;
 width:70%;
 float: right;
 }

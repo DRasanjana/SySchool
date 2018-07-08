@@ -1,23 +1,3 @@
-<?php
-	include_once "dbconnect.php";
-if($_SERVER['REQUEST_METHOD'] == "POST"){
-
-	$date=explode("-",$_POST['Date']);
-
-	$dateDiff = time()-mktime(0,0,0,$date[2],$date[1],$date[0]);
-	if($dateDiff>=0){
-		$grade=$_POST['grade'];
-	    $class=$_POST['class'];
-	    $classTable=$grade.$class;
-		$result = mysqli_query($con, "SELECT * FROM attendence WHERE date='$date' AND class='$classTable'");
-	}
-	else{
-		Print '<script>alert("Incorrect Date!");</script>';
-		header("location:studentattendance.php");
-	}
-}
-?>
-   
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -30,7 +10,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
       <meta name="robots" content="index, follow" >
       <meta name="googlebot" content="noodp" >
       <meta name="slurp" content="noydir">
-      <title>SySchool - Student SignUp </title>
+      <title>SySchool - Student Attendence </title>
       <link rel="icon" href="images/fav.png" type="image/gif" sizes="16x16">
       <!-- ********************* CSS  LINKS ********************* -->
       <link href="styles/custom.css" rel="stylesheet">
@@ -74,47 +54,46 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
       </div>
       <!--end of top-->
       <div class="banner">
-         <h1>VIEW STUDENT ATTENDENCE DETAILS </h1>
+         <h1>STUDENT ATTENDENCE</h1>
       </div>
       <!--end of banner-->  
       <div class="col-md-12">
          <div class="address">
-            <form method="POST"> 
-               <div class="timetable" style="overflow-x:auto;">
-         <table>
-         	<tr>
-               <th>Number</th>
-               <th>Admission Number</th>
-               <th>Attendance</th>
-           </tr>
-               <?php
-        	   $counter=0;
-               $serialNumber = 0;
-               while($row=mysqli_fetch_array($result)){
-               	$serialNumber++;
-               ?>
-               <tr>
-               <td> <?php echo $serialNumber; ?></td>
+            <form action="markStdntAttendence.php" method="POST"> 
+               <fieldset>
+                  <ul>
+                  <li class="col-md-3">Date</li>
+                  <li><input class="col-md-12" type="Date" name="Date" placeholder="Date" required></li>
+ 
 
-               <td> <?php echo $row['admission_number']; ?>
-               <input type="hidden" value="<?php echo $row['admission_number']; ?>" name="admission_number[]">
-               </td>
+                  <li class="col-md-3">Grade</li>
+                  <li>
+                  <select name="grade" required>
+                     <option disabled selected value>-- Select Grade --</option>
+                     <option value="6">6</option>
+                     <option value="7">7</option>
+                  </select>
+                  </li>
 
-               <td> <?php echo $row['attended']; ?>
-               <input type="hidden" value="<?php echo $row['attended']; ?>" name="attended[]">
-               </td>
-               
-            </tr>
-               <?php
-               $counter++;
-               }
-               ?>
-         </table>
-      </div>         
+                  <li class="col-md-3">Class</li>
+                  <li>
+                  <select name="class" required>
+                     <option disabled selected value>-- Select Class --</option>
+                     <option value="A">A</option>
+                     <option value="B">B</option>
+                  </select>
+                  </li>
+                  </ul>
+               </fieldset>
+               <button type="submit">NEXT</button></div>            
    </form>
+            </form>
          </div>
          <!--end of address-->
       </div>
       <!--end of col-md-12-->
+<?php
+require_once 'footer.php';
+?>
    </body>
-   </html>
+</html>
