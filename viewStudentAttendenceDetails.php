@@ -1,8 +1,8 @@
 <?php
-session_start();
-   if( $_SESSION['user']==''){
-      header("location: index.php");
-   }
+//session_start();
+  // if( $_SESSION['user']==''){
+    //  header("location: index.php");
+   //}
 ?>
 <?php
 	include_once "dbconnect.php";

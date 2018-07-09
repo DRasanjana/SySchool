@@ -1,8 +1,8 @@
 <?php
 session_start();
-   if( $_SESSION['user']==''){
-      header("location: index.php");
-   }
+   //if( $_SESSION['user']==''){
+     // header("location: index.php");
+   //}
 ?>
 
 <!DOCTYPE html>
@@ -165,11 +165,7 @@ session_start();
                            </div>
                            <div class="img-show">
                               <div class="center">
-<<<<<<< HEAD
                                  <p><button class="update" type="submit" onclick="window.location.href='editprofile.php'">EDIT PROFILE</button></p>
-=======
-                                 <p><button class="update" type="submit" onclick="window.location.href='editteacherprofile.php'">EDIT PROFILE</button></p>
->>>>>>> c89502d4e74eff6c104fadf925d4759ec1a9423f
                               </div>
                            </div>
                         </div>
