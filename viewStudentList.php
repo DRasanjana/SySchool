@@ -1,10 +1,10 @@
 <?php
 include_once "dbconnect.php";
 if($_SERVER['REQUEST_METHOD'] == "POST"){
+	$temp=$_POST['Date'];
+	$date=explode("-",$temp);
 
-	$date=explode("-",$_POST['Date']);
-
-	$dateDiff = time()-mktime(0,0,0,$date[2],$date[1],$date[0]);
+	$dateDiff = time() - mktime(0,0,0,$date[1],$date[2],$date[0]);
 	if($dateDiff>=0){
 		$grade=$_POST['grade'];
 	    $class=$_POST['class'];
@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 	}
 	else{
 		Print '<script>alert("Incorrect Date!");</script>';
-		header("location:studentattendance.php");
+		Print '<script>window.location.assign("studentattendence.php");</script>';
 	}
 }
 ?>
