@@ -39,30 +39,30 @@ class DBOperations{
 		session_start();
 		$password=md5($password);
 		$link= mysqli_connect("localhost", "root", "", "syschool") or die("Something wrong with the server, try again later");
-		$sqll = "SELECT * FROM user WHERE Username='{$username}' && Password='{$password}'";
+		$sqll = "SELECT * FROM user WHERE user_id='{$username}' && pw='{$password}'";
 		$res = mysqli_query($link,$sqll);
 		if($row=mysqli_fetch_assoc($res)){
 			if($row['Type']=="student"){
 				$_SESSION['user'] = $username;
-				$resn=mysqli_query($link,"SELECT * FROM student WHERE AdmissionNumber='{$username}'");
+				$resn=mysqli_query($link,"SELECT * FROM student WHERE admission_number='{$username}'");
 				if($rown=mysqli_fetch_assoc($resn)){
-					$_SESSION['uname']=$rown['NameWithInitials'];
+					$_SESSION['uname']=$rown['name'];
 				}
 				header("location: homestudent.php");
 			}
-			elseif($row['Type']=="teacher"){
+			elseif($row['type']=="teacher"){
 				$_SESSION['user'] = $username;
-				$resn=mysqli_query($link,"SELECT * FROM teacher WHERE ReferenceNumber='{$username}'");
+				$resn=mysqli_query($link,"SELECT * FROM teacher WHERE reference_number='{$username}'");
 				if($rown=mysqli_fetch_assoc($resn)){
-					$_SESSION['uname']=$rown['NameWithInitials'];
+					$_SESSION['uname']=$rown['name'];
 				}
 				header("location: hometeacher.php");
 			}
-			elseif($row['Type']=="staff"){
+			elseif($row['type']=="staff"){
 				$_SESSION['user'] = $username;
-				$resn=mysqli_query($link,"SELECT * FROM staff WHERE ReferenceNumber='{$username}'");
+				$resn=mysqli_query($link,"SELECT * FROM staff WHERE reference_number='{$username}'");
 				if($rown=mysqli_fetch_assoc($resn)){
-					$_SESSION['uname']=$rown['NameWithInitials'];
+					$_SESSION['uname']=$rown['name'];
 				}
 				header("location: homestaff.php");
 			}
@@ -84,7 +84,18 @@ class DBOperations{
 	}
 
 	public function changePassword($user){
-		$this->connect()->query("UPDATE user SET Password='$user->password' WHERE Username='$user->username'");
+		$this->connect()->query("UPDATE user SET pw='$user->password' WHERE user_id='$user->username'");
+	}
+	
+	public function updateStudent($student){
+		$this->connect()->query("UPDATE student SET full_name='$student->fullName',name='$student->nameWithInitials',address='$student->address',date_of_birth='$student->dateOfBirth',gender='$student->gender',nic_Number='$student->nicNumber',contact_number='$student->contactNumber',class='$student->class',father_name='$student->fatherName',father_occupation='$student->fatherOccupation',mother_name='$student->motherName',mother_ccupation='$student->motherOccupation' WHERE admission_number='$student->admissionNumber'");
 	}
 
+	public function updateTeacher($teacher){
+		$this->connect()->query("UPDATE teacher SET full_name='$teacher->fullName',name='$teacher->nameWithInitials',address='$teacher->address',date_of_birth='$teacher->dateOfBirth',gender='$teacher->gender',nic_Number='$teacher->nicNumber',contact_number='$teacher->contactNumber',field='$teacher->fieldOfSpecialized',experience='$teacher->workingExperience',position='$teacher->position' WHERE reference_number='$teacher->referenceNumber'");
+	}
+
+	public function updateStaff($staff){
+		$this->connect()->query("UPDATE staff SET full_name='$staff->fullName',name='$staff->nameWithInitials',address='$staff->address',date_of_birth='$staff->dateOfBirth',gender='$staff->gender',nic_Number='$staff->nicNumber',contact_number='$staff->contactNumber',field='$staff->fieldOfSpecialized',experience='$staff->workingExperience',position='$staff->position' WHERE reference_number='$staff->referenceNumber'");
+	}
 }

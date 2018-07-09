@@ -109,14 +109,14 @@ session_start();
                      </a>
                   </div>
                   <div class="col-md-3">
-                     <a href="#" id="show-project-a">
+                     <a href="" id="show-project-a">
                         <div class="img-box">
                            <div class="img">
                               <img src="images/gal/4.jpg" alt="gallery" >
                            </div>
                            <div class="img-show">
                               <div class="center">
-                                 <p>VIEW ASSIGNMENTS</p>
+                                 <p><button class="update" type="submit" onclick="window.location.href='uploadAssignment.php'">UPLOAD ASSIGNMENT</button></p>
                               </div>
                            </div>
                         </div>
@@ -124,25 +124,29 @@ session_start();
                      </a>
                   </div>
                   <div class="col-md-3">
-                     <a href="#" id="show-project-a">
-                        <div class="img-box">
-                           <div class="img">
-                              <img src="images/gal/8.jpg" alt="gallery" >
-                           </div>
-                           <div class="img-show">
-                              <div class="center">
-                                 <p><button class="update" type="submit" onclick="window.location.href='insertmarks.php'">INSERT MARKS</button></p>
-                              </div>
-                           </div>
-                        </div>
-                        <!--end of img box-->
-                     </a>
-                  </div>
-                  <div class="col-md-3">
-                     <a href="#" id="show-project-a">
+                     <a href="" id="show-project-a">
                         <div class="img-box">
                            <div class="img">
                               <img src="images/gal/9.jpg" alt="gallery" >
+                           </div>
+                           <div class="img-show">
+                              <div class="center">
+<<<<<<< HEAD
+                                 <p><button class="update" type="submit" onclick="window.location.href='insertmarks.php'">INSERT MARKS</button></p>
+=======
+                                 <p><button class="update" type="submit" onclick="window.location.href='studentAttendence.php'">MARK STUDENT ATTENDENCE</button></p>
+>>>>>>> c89502d4e74eff6c104fadf925d4759ec1a9423f
+                              </div>
+                           </div>
+                        </div>
+                        <!--end of img box-->
+                     </a>
+                  </div>
+                  <div class="col-md-3">
+                     <a href="" id="show-project-a">
+                        <div class="img-box">
+                           <div class="img">
+                              <img src="images/gal/10.jpg" alt="gallery" >
                            </div>
                            <div class="img-show">
                               <div class="center">
@@ -154,14 +158,18 @@ session_start();
                      </a>
                   </div>
                   <div class="col-md-3">
-                     <a href="#" id="show-project-a">
+                     <a href="" id="show-project-a">
                         <div class="img-box">
                            <div class="img">
-                              <img src="images/gal/10.jpg" alt="gallery" >
+                              <img src="images/gal/11.jpg" alt="gallery" >
                            </div>
                            <div class="img-show">
                               <div class="center">
+<<<<<<< HEAD
                                  <p><button class="update" type="submit" onclick="window.location.href='editprofile.php'">EDIT PROFILE</button></p>
+=======
+                                 <p><button class="update" type="submit" onclick="window.location.href='editteacherprofile.php'">EDIT PROFILE</button></p>
+>>>>>>> c89502d4e74eff6c104fadf925d4759ec1a9423f
                               </div>
                            </div>
                         </div>

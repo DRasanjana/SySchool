@@ -12,13 +12,13 @@
 	<?php
 		session_start();
         $link= mysqli_connect("localhost", "root", "", "syschool") or die("Something wrong with the server, try again later");
-        $sqll = "SELECT * FROM user WHERE Username='{$_SESSION['user']}'";            
+        $sqll = "SELECT * FROM user WHERE user_id='{$_SESSION['user']}'";            
         $res = mysqli_query($link,$sqll);
         if($row=mysqli_fetch_assoc($res)){  
-        	if($row['Password']==md5($_POST['currentPassword'])){
+        	if($row['pw']==md5($_POST['currentPassword'])){
         		if($_POST['newPassword']==$_POST['confirmPassword']){
         			$database = new DBOperations();
-        			$user = new User($row['Username'],md5($_POST['newPassword']),$row['Type']);	
+        			$user = new User($row['user_id'],md5($_POST['newPassword']),$row['type']);	
         			$database->changePassword($user);
         			header("location: homestudent.php");
         		}else{

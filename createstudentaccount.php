@@ -21,9 +21,9 @@
 				session_start();
 				$_SESSION['user'] = $username;
 				$link= mysqli_connect("localhost", "root", "", "syschool") or die("Something wrong with the server, try again later");
-				$resn=mysqli_query($link,"SELECT * FROM student WHERE AdmissionNumber='{$username}'");
+				$resn=mysqli_query($link,"SELECT * FROM student WHERE admission_number='{$username}'");
 				if($rown=mysqli_fetch_assoc($resn)){
-					$_SESSION['uname']=$rown['NameWithInitials'];
+					$_SESSION['uname']=$rown['name'];
 				}
 				header ("Location: homestudent.php");
 			}else{
