@@ -92,7 +92,6 @@
                   </ul>
                </fieldset>
                <button type="submit" name="submit">UPLOAD</button></div>          
-   </form>
             </form>
          </div>
          <!--end of address-->
