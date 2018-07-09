@@ -1,3 +1,9 @@
+<?php
+session_start();
+   if( $_SESSION['user']==''){
+      header("location: index.php");
+   }
+?>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -27,10 +33,25 @@
    </head>
    <body class="bg">
       <div class="top top-bar-bg">
-         <?php
-            include_once "header.php";
-         ?>
-               </div>
+         <div class="logo">
+            <a>Sy<span>S</span>chool</a>
+         </div>
+         <!--end of logo-->
+         <div class="login">
+            <form>
+               <button><?php echo $_SESSION['uname']; ?></button>                       
+            </form>
+         </div>
+         <!--end of login menu-->
+         <div class="menu">
+            <ul>
+               <li><a href="homestaff.php">HOME</a></li>
+               <li><a href="downloads.php">DOWNLOADS</a></li>
+               <li><a  href="logout.php">LOGOUT</a></li>
+            </ul>
+         </div>
+         <!--end of menu-->
+      </div>
       <!--end of top-->
       <div class="banner">
          <h1>VIEW ATTENDENCE DETAILS</h1>

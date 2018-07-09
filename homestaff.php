@@ -36,24 +36,20 @@
    <body class="bg">
       <div class="top top-bar-bg">
          <div class="logo">
-            <a href="index.php">Sy<span>S</span>chool</a>
+            <a>Sy<span>S</span>chool</a>
          </div>
          <!--end of logo-->
          <div class="login">
             <form>
-               <button>H V S De Silva</button>                           
+               <button><?php echo $_SESSION['uname']; ?></button>                       
             </form>
          </div>
          <!--end of login menu-->
          <div class="menu">
             <ul>
-               <li class="selected"><a href="hometeacher.php">HOME</a></li>
-               <li><a href="services.php">DOWNLOADS</a></li>
-               <li><a href="about.php">ABOUT</a></li>
-               <!--<li><a href="services.php">SERVICES</a></li>
-               <li><a href="works.php">WORKS</a></li>
-               <li ><a href="pricing.php"  >PRICING</a></li>-->
-               <li><a  href="signup.php">LOGOUT</a></li>
+               <li class="selected"><a href="homestaff.php">HOME</a></li>
+               <li><a href="downloads.php">DOWNLOADS</a></li>
+               <li><a  href="logout.php">LOGOUT</a></li>
             </ul>
          </div>
          <!--end of menu-->
@@ -75,7 +71,7 @@
                            </div>
                            <div class="img-show">
                               <div class="center">
-                                 <p>VIEW TIME TABLE</p>
+                                 <p><button class="update" type="submit" onclick="window.location.href='viewattendencedetails.php'">VIEW ATTENDENCE</button></p>
                               </div>
                            </div>
                         </div>
@@ -105,7 +101,7 @@
                            </div>
                            <div class="img-show">
                               <div class="center">
-                                 <p>LIBRARY FACILITIES</p>
+                                 <p><button class="update" type="submit" onclick="window.location.href='libraryhome.php'">LIBRARY FACILITIES</button></p>
                               </div>
                            </div>
                         </div>
@@ -135,7 +131,7 @@
                            </div>
                            <div class="img-show">
                               <div class="center">
-                                 <p>MARK THE ATTENDENCE</p>
+                                 <p><button class="update" type="submit" onclick="window.location.href='changepassword.php'">MARK ATTENDENCE</button></p>
                               </div>
                            </div>
                         </div>
@@ -192,10 +188,6 @@
             <!--end of col-12-->
          </div>
       </div>
-
-      <?php
-      require_once 'footer.php';
-      ?>
       
    </body>
 </html>
