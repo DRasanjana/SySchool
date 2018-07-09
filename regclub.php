@@ -1,3 +1,9 @@
+<?php
+session_start();
+   if( $_SESSION['user']==''){
+      header("location: index.php");
+   }
+?>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -35,18 +41,28 @@
          if($row=mysqli_fetch_assoc($res)){
       ?>
       <div class="top top-bar-bg">
+<<<<<<< HEAD
        <div class="logo">
             <a href="index.php">Sy<span>S</span>chool</a>
+=======
+         <div class="logo">
+            <a>Sy<span>S</span>chool</a>
+>>>>>>> 5bb64f09dd87355677e042bde11ae7a09bf6a572
          </div>
          <!--end of logo-->
          <div class="login">
             <form>
+<<<<<<< HEAD
                <button><?php echo $_SESSION['uname']; ?></button>                           
+=======
+               <button><?php echo $_SESSION['uname']; ?></button>                       
+>>>>>>> 5bb64f09dd87355677e042bde11ae7a09bf6a572
             </form>
          </div>
          <!--end of login menu-->
          <div class="menu">
             <ul>
+<<<<<<< HEAD
                <li class="selected"><a href="hometeacher.php">HOME</a></li>
                <li><a href="services.php">DOWNLOADS</a></li>
                <li><a href="about.php">ABOUT</a></li>
@@ -54,6 +70,11 @@
                <li><a href="works.php">WORKS</a></li>
                <li ><a href="pricing.php"  >PRICING</a></li>-->
                <li><a href="logout.php">LOGOUT</a></li>
+=======
+               <li><a href="homestudent.php">HOME</a></li>
+               <li><a href="downloads.php">DOWNLOADS</a></li>
+               <li><a  href="logout.php">LOGOUT</a></li>
+>>>>>>> 5bb64f09dd87355677e042bde11ae7a09bf6a572
             </ul>
          </div>
          <!--end of menu-->

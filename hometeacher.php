@@ -1,8 +1,8 @@
 <?php
 session_start();
-   if( $_SESSION['user']==''){
-      header("location: index.php");
-   }
+   //if( $_SESSION['user']==''){
+     // header("location: index.php");
+   //}
 ?>
 
 <!DOCTYPE html>
@@ -35,24 +35,20 @@ session_start();
    <body class="bg">
       <div class="top top-bar-bg">
          <div class="logo">
-            <a href="index.php">Sy<span>S</span>chool</a>
+            <a>Sy<span>S</span>chool</a>
          </div>
          <!--end of logo-->
          <div class="login">
             <form>
-               <button><?php echo $_SESSION['uname']; ?></button>                           
+               <button><?php echo $_SESSION['uname']; ?></button>                       
             </form>
          </div>
          <!--end of login menu-->
          <div class="menu">
             <ul>
                <li class="selected"><a href="hometeacher.php">HOME</a></li>
-               <li><a href="services.php">DOWNLOADS</a></li>
-               <li><a href="about.php">ABOUT</a></li>
-               <!--<li><a href="services.php">SERVICES</a></li>
-               <li><a href="works.php">WORKS</a></li>
-               <li ><a href="pricing.php"  >PRICING</a></li>-->
-               <li><a href="logout.php">LOGOUT</a></li>
+               <li><a href="downloads.php">DOWNLOADS</a></li>
+               <li><a  href="logout.php">LOGOUT</a></li>
             </ul>
          </div>
          <!--end of menu-->
@@ -75,7 +71,7 @@ session_start();
                            </div>
                            <div class="img-show">
                               <div class="center">
-                                 <p>VIEW TIME TABLE</p>
+                                 <p><button class="update" type="submit" onclick="window.location.href='timetablestudent.php'">VIEW TIME TABLE</button></p>
                               </div>
                            </div>
                         </div>
@@ -90,7 +86,7 @@ session_start();
                            </div>
                            <div class="img-show">
                               <div class="center">
-                                 <p>VIEW STUDENTS GRADES</p>
+                                 <p><button class="update" type="submit" onclick="window.location.href='viewgrades.php'">VIEW STUDENTS GRADES</button></p>
                               </div>
                            </div>
                         </div>
@@ -105,7 +101,7 @@ session_start();
                            </div>
                            <div class="img-show">
                               <div class="center">
-                                 <p>LIBRARY FACILITIES</p>
+                                 <p><button class="update" type="submit" onclick="window.location.href='homelibrary.php'">LIBRARY FACILITIES</button></p>
                               </div>
                            </div>
                         </div>
@@ -135,7 +131,11 @@ session_start();
                            </div>
                            <div class="img-show">
                               <div class="center">
+<<<<<<< HEAD
+                                 <p><button class="update" type="submit" onclick="window.location.href='insertmarks.php'">INSERT MARKS</button></p>
+=======
                                  <p><button class="update" type="submit" onclick="window.location.href='studentAttendence.php'">MARK STUDENT ATTENDENCE</button></p>
+>>>>>>> c89502d4e74eff6c104fadf925d4759ec1a9423f
                               </div>
                            </div>
                         </div>
@@ -165,7 +165,7 @@ session_start();
                            </div>
                            <div class="img-show">
                               <div class="center">
-                                 <p><button class="update" type="submit" onclick="window.location.href='editteacherprofile.php'">EDIT PROFILE</button></p>
+                                 <p><button class="update" type="submit" onclick="window.location.href='editprofile.php'">EDIT PROFILE</button></p>
                               </div>
                            </div>
                         </div>
@@ -192,10 +192,6 @@ session_start();
             <!--end of col-12-->
          </div>
       </div>
-      
-      <?php 
-         require_once 'footer.php'; 
-      ?>
       
    </body>
 </html>

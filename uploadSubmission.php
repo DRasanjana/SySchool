@@ -1,3 +1,9 @@
+<?php
+//session_start();
+  // if( $_SESSION['user']==''){
+    //  header("location: index.php");
+  // }
+?>
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -28,26 +34,20 @@
    <body class="bg">
       <div class="top top-bar-bg">
          <div class="logo">
-            <a href="index.php">Sy<span>S</span>chool</a>
+            <a>Sy<span>S</span>chool</a>
          </div>
          <!--end of logo-->
          <div class="login">
             <form>
-               <input type="text" title="User Name" name="" placeholder="User Name">
-               <input type="Password" title="Password" name="" placeholder="Password">
-               <button>LOGIN </button>                           
+               <button><?php echo $_SESSION['uname']; ?></button>                       
             </form>
          </div>
          <!--end of login menu-->
          <div class="menu">
             <ul>
-               <li><a href="index.php">HOME</a></li>
-               <li><a href="services.php">DOWNLOADS</a></li>
-               <li><a href="about.php">ABOUT</a></li>
-               <!--<li><a href="services.php">SERVICES</a></li>
-               <li><a href="works.php">WORKS</a></li>
-               <li ><a href="pricing.php"  >PRICING</a></li>-->
-               <li class="selected"><a  href="signup.php">SIGNUP</a></li>
+               <li><a href="homestudent.php">HOME</a></li>
+               <li><a href="downloads.php">DOWNLOADS</a></li>
+               <li><a  href="logout.php">LOGOUT</a></li>
             </ul>
          </div>
          <!--end of menu-->
