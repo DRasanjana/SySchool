@@ -13,7 +13,7 @@
 	<?php
 		session_start();
         $link= mysqli_connect("localhost", "root", "", "syschool") or die("Something wrong with the server, try again later");
-        $sqll = "SELECT * FROM student WHERE AdmissionNumber='{$_SESSION['user']}'";            
+        $sqll = "SELECT * FROM student WHERE admission_number='{$_SESSION['user']}'";            
         $res = mysqli_query($link,$sqll);
         if($row=mysqli_fetch_assoc($res)){  
 		$fullName=$_POST['fullName'];

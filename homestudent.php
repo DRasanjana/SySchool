@@ -142,14 +142,14 @@ session_start();
                      </a>
                   </div>
                   <div class="col-md-3">
-                     <a href="#" id="show-project-a">
+                     <a href="" id="show-project-a">
                         <div class="img-box">
                            <div class="img">
                               <img src="images/gal/9.jpg" alt="gallery" >
                            </div>
                            <div class="img-show">
                               <div class="center">
-                                 <p>CALANDER</p>
+                                 <p><button class="update" type="submit" onclick="window.location.href='regclub.php'">REGISTER CLUB/SOCIETY</button></p>
                               </div>
                            </div>
                         </div>
@@ -179,7 +179,7 @@ session_start();
                            </div>
                            <div class="img-show">
                               <div class="center">
-                                 <p><button class="update" type="submit" onclick="window.location.href='editprofile.php'">EDIT PROFILE</button></p>
+                                 <p><button class="update" type="submit" onclick="window.location.href='editstudentprofile.php'">EDIT PROFILE</button></p>
                               </div>
                            </div>
                         </div>

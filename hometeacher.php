@@ -113,14 +113,14 @@ session_start();
                      </a>
                   </div>
                   <div class="col-md-3">
-                     <a href="#" id="show-project-a">
+                     <a href="" id="show-project-a">
                         <div class="img-box">
                            <div class="img">
                               <img src="images/gal/4.jpg" alt="gallery" >
                            </div>
                            <div class="img-show">
                               <div class="center">
-                                 <p>VIEW ASSIGNMENTS</p>
+                                 <p><button class="update" type="submit" onclick="window.location.href='uploadAssignment.php'">UPLOAD ASSIGNMENT</button></p>
                               </div>
                            </div>
                         </div>
@@ -128,29 +128,14 @@ session_start();
                      </a>
                   </div>
                   <div class="col-md-3">
-                     <a href="#" id="show-project-a">
-                        <div class="img-box">
-                           <div class="img">
-                              <img src="images/gal/8.jpg" alt="gallery" >
-                           </div>
-                           <div class="img-show">
-                              <div class="center">
-                                 <p>INSERT MARKS</p>
-                              </div>
-                           </div>
-                        </div>
-                        <!--end of img box-->
-                     </a>
-                  </div>
-                  <div class="col-md-3">
-                     <a href="#" id="show-project-a">
+                     <a href="" id="show-project-a">
                         <div class="img-box">
                            <div class="img">
                               <img src="images/gal/9.jpg" alt="gallery" >
                            </div>
                            <div class="img-show">
                               <div class="center">
-                                 <p>REQUEST A LEAVE</p>
+                                 <p><button class="update" type="submit" onclick="window.location.href='studentAttendence.php'">MARK STUDENT ATTENDENCE</button></p>
                               </div>
                            </div>
                         </div>
@@ -158,14 +143,29 @@ session_start();
                      </a>
                   </div>
                   <div class="col-md-3">
-                     <a href="#" id="show-project-a">
+                     <a href="" id="show-project-a">
                         <div class="img-box">
                            <div class="img">
                               <img src="images/gal/10.jpg" alt="gallery" >
                            </div>
                            <div class="img-show">
                               <div class="center">
-                                 <p>UPCOMING EVENTS</p>
+                                 <p><button class="update" type="submit" onclick="window.location.href='changepassword.php'">CHANGE PASSWORD</button></p>
+                              </div>
+                           </div>
+                        </div>
+                        <!--end of img box-->
+                     </a>
+                  </div>
+                  <div class="col-md-3">
+                     <a href="" id="show-project-a">
+                        <div class="img-box">
+                           <div class="img">
+                              <img src="images/gal/11.jpg" alt="gallery" >
+                           </div>
+                           <div class="img-show">
+                              <div class="center">
+                                 <p><button class="update" type="submit" onclick="window.location.href='editteacherprofile.php'">EDIT PROFILE</button></p>
                               </div>
                            </div>
                         </div>
