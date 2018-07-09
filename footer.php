@@ -32,8 +32,8 @@
                         <div class="col-md-4 nopadding">
                            <div class="contact-home">
                               <h4><i class="fa fa-phone"></i></h4>
-                              <h3> +94 77 312 90 22</h3>
-                              <h3> +94 112 23 45 20</h3>
+                              <h4> +94 77 312 90 22</h4>
+                              <h4> +94 112 23 45 20</h4>
                            </div>
                            <!--end of contact home-->
                         </div>
@@ -41,8 +41,8 @@
                         <div class="col-md-4 nopadding">
                            <div class="contact-home">
                               <h4><i class="fa fa-envelope"></i></h4>
-                              <h3> 11, A R De Mel Rd,</h3>
-                              <h3>Colombo 04</h3>
+                              <h4> 11, A R De Mel Rd,</h4>
+                              <h4>Colombo 04</h4>
                            </div>
                            <!--end of contact home-->
                         </div>
@@ -50,8 +50,8 @@
                         <div class="col-md-4 nopadding">
                            <div class="contact-home">
                               <h4><i class="fa fa-envelope"></i></h4>
-                              <h3>contact@gmail.com</h3>
-                              <h3> contact@syschool.com</h3>
+                              <h4>contact@gmail.com</h4>
+                              <h4> contact@syschool.com</h4>
                            </div>
                            <!--end of contact home-->
                         </div>

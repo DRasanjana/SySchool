@@ -10,7 +10,7 @@
       <meta name="robots" content="index, follow" >
       <meta name="googlebot" content="noodp" >
       <meta name="slurp" content="noydir">
-      <title>SySchool - Teacher Attendence </title>
+      <title>SySchool - Student Attendence </title>
       <link rel="icon" href="images/fav.png" type="image/gif" sizes="16x16">
       <!-- ********************* CSS  LINKS ********************* -->
       <link href="styles/custom.css" rel="stylesheet">
@@ -54,28 +54,46 @@
       </div>
       <!--end of top-->
       <div class="banner">
-         <h1>TEACHER ATTENDENCE</h1>
+         <h1>STUDENT ATTENDENCE</h1>
       </div>
       <!--end of banner-->  
       <div class="col-md-12">
          <div class="address">
-            <form action="markTeacherAttendence.php" method="POST"> 
+            <form action="markStdntAttendence.php" method="POST"> 
                <fieldset>
                   <ul>
                   <li class="col-md-3">Date</li>
                   <li><input class="col-md-12" type="Date" name="Date" placeholder="Date" required></li>
  
+
+                  <li class="col-md-3">Grade</li>
+                  <li>
+                  <select name="grade" required>
+                     <option disabled selected value>-- Select Grade --</option>
+                     <option value="6">6</option>
+                     <option value="7">7</option>
+                  </select>
+                  </li>
+
+                  <li class="col-md-3">Class</li>
+                  <li>
+                  <select name="class" required>
+                     <option disabled selected value>-- Select Class --</option>
+                     <option value="A">A</option>
+                     <option value="B">B</option>
+                  </select>
+                  </li>
                   </ul>
                </fieldset>
-               <button type="submit">VIEW LIST</button></div>            
+               <button type="submit">NEXT</button></div>            
    </form>
             </form>
          </div>
          <!--end of address-->
       </div>
       <!--end of col-md-12-->
-      <?php 
-      require_once 'footer.php';
-      ?>
+<?php
+require_once 'footer.php';
+?>
    </body>
 </html>

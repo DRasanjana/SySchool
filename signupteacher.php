@@ -41,11 +41,11 @@
                   <legend>Create an Account</legend>
                   <ul>
                   <li class="col-md-3">Username</li>
-                  <li><input class="col-md-12" type="text" name="username" placeholder="Username"></li>
+                  <li><input class="col-md-12" type="text" name="username" placeholder="Username" required></li>
                   <li class="col-md-3">Password</li>
-                  <li><input class="col-md-12" type="Password" name="password" placeholder="Password"></li>
+                  <li><input class="col-md-12" type="Password" name="password" placeholder="Password" required></li>
               <li class="col-md-3">Confirm Password</li>
-                  <li><input class="col-md-12" type="Password" name="confirmPassword" placeholder="Confirm Password"></li>
+                  <li><input class="col-md-12" type="Password" name="confirmPassword" placeholder="Confirm Password" required></li>
                   </ul>
                </fieldset>
                <br>
@@ -53,105 +53,22 @@
                   <legend>Payment Info</legend>
                   <ul>
                   <li class="col-md-3">Bank</li>
-                              <li><input class="col-md-12" type="text" name="" placeholder="Bank"></li>
+                              <li><input class="col-md-12" type="text" name="" placeholder="Bank" required></li>
                               <li class="col-md-3">Branch</li>
-                              <li><input class="col-md-12" type="text" name="" placeholder="Branch"></li>
+                              <li><input class="col-md-12" type="text" name="" placeholder="Branch" required></li>
                               <li class="col-md-3">Account/Card Number</li>
-                              <li><input class="col-md-12" type="text" name="" placeholder="Account/Card Number"></li>
+                              <li><input class="col-md-12" type="text" name="" placeholder="Account/Card Number" required></li>
                               <li class="col-md-3">Account/Card Name</li>
-                              <li><input class="col-md-12" type="text" name="" placeholder="Account/Card Name"></li>
+                              <li><input class="col-md-12" type="text" name="" placeholder="Account/Card Name" required></li>
                            </ul>
                </fieldset>			   
-               <div class="col-md-2"><button>PRINT</button></div>
-               <div class="col-md-10"><button type="submit">SUBMIT</button></div>
+               <div class="col-md-12"><button type="submit">SUBMIT</button></div>
             </form>
          </div>
          <!--end of address-->
       </div>
-      <div class="foot">
-         <div class="row">
-            <div class="col-md-12 ">
-               <div class="col-md-1 nopadding">
-                  <div class="head4">
-                  <p>CONTACT FOR MORE</p>
-                  </div>
-               </div>
-               <div class="col-md-11 nopadding">
-                  <div class="col-md-12 nopadding">
-                     <div class="head3">
-                        <h3>GET IN   <span>TOUCH</span> WITH US</h3>
-                     </div>
-                     <div class="sos">
-                        <ul>
-                           <li>
-                              <div class="circle"><a href="http://www.facebook.com"><i class="fa fa-facebook"></i></a></div>
-                           </li>
-                           <li>
-                              <div class="circle"><a href="http://www.twitter.com"><i class="fa fa-twitter"></i></a></div>
-                           </li>
-                           <li>
-                              <div class="circle"><a href="http://www.googleplus.com"><i class="fa fa-google-plus"></i></a></div>
-                           </li>
-                           <li>
-                              <div class="circle"><a href="http://www.youtube.com"><i class="fa fa-youtube"></i></a></div>
-                           </li>
-                        </ul>
-                     </div>
-                     <!--end of sos-->
-                     <div class="con-home">
-                        <div class="col-md-4 nopadding">
-                           <div class="contact-home">
-                              <h4><i class="fa fa-phone"></i></h4>
-                              <h3> +94 77 312 90 22</h3>
-                              <h3> +94 112 23 45 20</h3>
-                           </div>
-                           <!--end of contact home-->
-                        </div>
-                        <!--end of nopadding-->
-                        <div class="col-md-4 nopadding">
-                           <div class="contact-home">
-                              <h4><i class="fa fa-envelope"></i></h4>
-                              <h3> 11, A R De Mel Rd,</h3>
-                              <h3>Colombo 04</h3>
-                           </div>
-                           <!--end of contact home-->
-                        </div>
-                        <!--end of nopadding-->
-                        <div class="col-md-4 nopadding">
-                           <div class="contact-home">
-                              <h4><i class="fa fa-envelope"></i></h4>
-                              <h3>contact@gmail.com</h3>
-                              <h3> contact@syschool.com</h3>
-                           </div>
-                           <!--end of contact home-->
-                        </div>
-                        <!--end of nopadding-->
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!--end of foot-->
-      <div class="bottom-foot">
-         <div class="row nopadding">
-            <div class="col-md-12 nopadding">
-               <div class="col-md-6 nopadding">
-                  <p>Copyrights &copy; 2018 | <a href="http://www.SySchool.com" style=" color: #16a085;">SySchool</a> Inc</p>
-               </div>
-               <!--end of col-12-->
-               <div class="col-md-6 nopadding">
-                  <ul>
-                     <li><a href="index.php">HOME</a></li>
-                     <li><a href="about.php">ABOUT</a></li>
-                  </ul>
-               </div>
-               <!--end of col-12-->
-            </div>
-            <!--end of col-12-->
-         </div>
-         <!--en of row-->
-      </div>
-      <!--end of bottom foot-->
+      <?php
+      require_once 'footer.php';
+      ?>
    </body>
 </html>

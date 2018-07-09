@@ -1,5 +1,5 @@
 <?php
-	include("viewSTeacherList.php");
+	include("viewTeacherList.php");
 ?>
    
 <!DOCTYPE html>
@@ -14,7 +14,7 @@
       <meta name="robots" content="index, follow" >
       <meta name="googlebot" content="noodp" >
       <meta name="slurp" content="noydir">
-      <title>SySchool - Student SignUp </title>
+      <title>SySchool - Teacher Attendence </title>
       <link rel="icon" href="images/fav.png" type="image/gif" sizes="16x16">
       <!-- ********************* CSS  LINKS ********************* -->
       <link href="styles/custom.css" rel="stylesheet">
@@ -63,7 +63,7 @@
       <!--end of banner-->  
       <div class="col-md-12">
          <div class="address">
-            <form action="submitAttendance.php" method="POST"> 
+            <form action="submitteacherAttendence.php" method="POST"> 
                <div class="timetable" style="overflow-x:auto;">
          <table>
          	<tr>

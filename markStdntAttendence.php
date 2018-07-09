@@ -1,3 +1,7 @@
+<?php
+	include("viewStudentList.php");
+?>
+   
 <!DOCTYPE html>
 <html lang="en">
    <head>
@@ -10,7 +14,7 @@
       <meta name="robots" content="index, follow" >
       <meta name="googlebot" content="noodp" >
       <meta name="slurp" content="noydir">
-      <title>SySchool - Teacher Attendence </title>
+      <title>SySchool - Student Attendence </title>
       <link rel="icon" href="images/fav.png" type="image/gif" sizes="16x16">
       <!-- ********************* CSS  LINKS ********************* -->
       <link href="styles/custom.css" rel="stylesheet">
@@ -54,28 +58,56 @@
       </div>
       <!--end of top-->
       <div class="banner">
-         <h1>TEACHER ATTENDENCE</h1>
+         <h1>STUDENT ATTENDENCE</h1>
       </div>
       <!--end of banner-->  
       <div class="col-md-12">
          <div class="address">
-            <form action="markTeacherAttendence.php" method="POST"> 
-               <fieldset>
-                  <ul>
-                  <li class="col-md-3">Date</li>
-                  <li><input class="col-md-12" type="Date" name="Date" placeholder="Date" required></li>
- 
-                  </ul>
-               </fieldset>
-               <button type="submit">VIEW LIST</button></div>            
-   </form>
-            </form>
-         </div>
-         <!--end of address-->
-      </div>
-      <!--end of col-md-12-->
-      <?php 
-      require_once 'footer.php';
-      ?>
+            <form action="submitAttendence.php" method="POST"> 
+               <div class="timetable" style="overflow-x:auto;">
+               <table>
+            	<tr>
+               <th>Number</th>
+               <th>Name</th>
+               <th>IndexNumber</th>
+               <th>Attendence</th>
+               </tr>
+               <?php
+               $counter=0;
+               $serialNumber = 0;
+               while($row=mysqli_fetch_array($result)){
+               	$serialNumber++;
+               ?>
+               <tr>
+               <td> <?php echo $serialNumber; ?></td>
+               <td> <?php echo $row['name']; ?>
+               <input type="hidden" value="<?php echo $row['name']; ?>" name="name[]">
+               </td>
+               <td> <?php echo $row['admission_number']; ?>
+               <input type="hidden" value="<?php echo $row['admission_number']; ?>" name="admission_number[]">
+               </td>
+               <td> 
+               <input type="radio" name="attendance_status[<?php echo $counter;?>]" value="Present" required>Present
+               <input type="radio" name="attendance_status[<?php echo $counter;?>]" value="Absent" required>Absent
+               </td>
+               </tr>
+               <?php
+               $counter++;
+               }
+               ?>
+               </table>
+               </div>
+            <button type="submit">SUBMIT</button></div>            
+         </form>
+      </form>
+   </div>
+   <!--end of address-->
+</div>
+<!--end of col-md-12-->
+
+<?php
+   require_once "footer.php";
+?>
    </body>
 </html>
+

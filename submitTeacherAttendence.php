@@ -9,6 +9,6 @@ include_once "dbconnect.php";
 				Print '<script>alert("Attendence recorded successfully!");</script>'; 
 			}
 
-		}echo "<META HTTP-EQUIV='REFRES' CONTENT=\"1; 'teacherAttendence.php'\">"; 
+		}echo "<META HTTP-EQUIV='REFRES' CONTENT=\"1; 'homestaff.php'\">"; 
 	}
 ?>

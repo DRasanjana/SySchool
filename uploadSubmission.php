@@ -10,7 +10,7 @@
       <meta name="robots" content="index, follow" >
       <meta name="googlebot" content="noodp" >
       <meta name="slurp" content="noydir">
-      <title>SySchool - Teacher Attendence </title>
+      <title>SySchool - Assignment Submission </title>
       <link rel="icon" href="images/fav.png" type="image/gif" sizes="16x16">
       <!-- ********************* CSS  LINKS ********************* -->
       <link href="styles/custom.css" rel="stylesheet">
@@ -54,27 +54,52 @@
       </div>
       <!--end of top-->
       <div class="banner">
-         <h1>TEACHER ATTENDENCE</h1>
+         <h1>SUBMIT ASSIGNMENT</h1>
       </div>
       <!--end of banner-->  
       <div class="col-md-12">
          <div class="address">
-            <form action="markTeacherAttendence.php" method="POST"> 
+            <form action="uploadSubmission.php" method="POST" enctype="multipart/form-data"> 
                <fieldset>
                   <ul>
-                  <li class="col-md-3">Date</li>
-                  <li><input class="col-md-12" type="Date" name="Date" placeholder="Date" required></li>
- 
+                 
+                  <li class="col-md-3">Grade</li>
+                  <li>
+                  <select name="grade">
+                     <option disabled selected value> -- select an option -- </option>
+                     <option value="6">6</option>
+                     <option value="7">7</option>
+                  </select>
+                  </li>
+
+                  <li class="col-md-3">Class</li>
+                  <li>
+                  <select name="class">
+                     <option disabled selected value> -- select an option -- </option>
+                     <option value="A">A</option>
+                     <option value="B">B</option>
+                  </select>
+                  </li>
+                 
+
+                  <li class="col-md-3">Subject</li>
+                  <li>
+                  <select name="subject">
+                     <option disabled selected value> -- select an option -- </option>
+                     <option value="Mathematics">Mathematics</option>
+                     <option value="Science">Science</option>
+                  </li>
                   </ul>
                </fieldset>
-               <button type="submit">VIEW LIST</button></div>            
+               <button type="submit" name="submit">UPLOAD</button></div>          
    </form>
             </form>
          </div>
          <!--end of address-->
       </div>
       <!--end of col-md-12-->
-      <?php 
+
+      <?php
       require_once 'footer.php';
       ?>
    </body>

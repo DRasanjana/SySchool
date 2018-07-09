@@ -130,7 +130,7 @@ function get_table(){
       <!--end of col-md-12-->
 
       <?php 
-         require_once 'footermin.php';
+         require_once 'footer.php';
       ?>
    </body>
 </html>
