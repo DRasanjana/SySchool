@@ -30,7 +30,7 @@
       <?php
          session_start();
          $link= mysqli_connect("localhost", "root", "", "syschool") or die("Something wrong with the server, try again later");
-         $sqll = "SELECT * FROM teacher WHERE ReferenceNumber='{$_SESSION['user']}'";            
+         $sqll = "SELECT * FROM teacher WHERE reference_number='{$_SESSION['user']}'";            
          $res = mysqli_query($link,$sqll);            
          if($row=mysqli_fetch_assoc($res)){
       ?>
@@ -69,9 +69,9 @@
                <fieldset>
                   <ul>
                   <li class="col-md-3">Reference Number</li>
-                  <li><input class="col-md-12" type="text" disabled name="nicNumber" placeholder="NIC Number" value=<?php echo $row['ReferenceNumber']; ?>></li>
+                  <li><input class="col-md-12" type="text" disabled name="nicNumber" placeholder="NIC Number" value=<?php echo $row['reference_number']; ?>></li>
                   <li class="col-md-3">Name With Initials</li>
-                  <li><input class="col-md-12" type="text" disabled name="contactNumber" value=<?php echo $row['NameWithInitials']; ?>></li>
+                  <li><input class="col-md-12" type="text" disabled name="contactNumber" value=<?php echo $row['name']; ?>></li>
                   <li class="col-md-3">Type of Leave</li>
                   <li>
                   <select name="leavetype" id="leave" onChange="myFunction();">
@@ -85,8 +85,7 @@
                   <li class="col-md-3">Leave Until</li>
                   <li><input class="col-md-12" type="Date" title="Recheck your Leave Date!" name="leaveuntil" id="leaveto" disabled></li>
                   <li class="col-md-3">Reason</li>
-                  <li><textarea class="col-md-12" rows="3" type="text" name="address" placeholder="Reason" value=<?php echo $row['Address']; ?>></textarea></li>                 
-                  </ul>
+                  <li><textarea class="col-md-12" rows="3" type="text" name="address" placeholder="Reason"></textarea></li>             </ul>
                </fieldset>
                <?php
                   }

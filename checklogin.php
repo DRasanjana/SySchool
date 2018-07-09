@@ -91,7 +91,7 @@ if(isset($_POST['login'])){
 	}
 	}*/
     else{
-        Print '<script>alert("Incorrect username!");</script>'; 
+        Print '<script>alert("Incorrect username or Password!");</script>'; 
         Print '<script>window.location.assign("index.php");</script>';
     }
 
