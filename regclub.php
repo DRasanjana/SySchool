@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
       <meta charset="UTF-8">
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
       <meta name="description" content="">
@@ -10,7 +11,7 @@
       <meta name="robots" content="index, follow" >
       <meta name="googlebot" content="noodp" >
       <meta name="slurp" content="noydir">
-      <title>SySchool - Student Club Registration </title>
+      <title>SySchool - Leave Application </title>
       <link rel="icon" href="images/fav.png" type="image/gif" sizes="16x16">
       <!-- ********************* CSS  LINKS ********************* -->
       <link href="styles/custom.css" rel="stylesheet">
@@ -26,58 +27,81 @@
       <script src="js/scroll.js"></script>    
    </head>
    <body class="bg">
+      <?php
+         session_start();
+         $link= mysqli_connect("localhost", "root", "", "syschool") or die("Something wrong with the server, try again later");
+         $sqll = "SELECT * FROM student WHERE admission_number='{$_SESSION['user']}'";            
+         $res = mysqli_query($link,$sqll);            
+         if($row=mysqli_fetch_assoc($res)){
+      ?>
       <div class="top top-bar-bg">
-         <div class="logo">
+       <div class="logo">
             <a href="index.php">Sy<span>S</span>chool</a>
          </div>
          <!--end of logo-->
          <div class="login">
             <form>
-               <button>B L O D HEMACHANDRA</button>                           
+               <button><?php echo $_SESSION['uname']; ?></button>                           
             </form>
          </div>
          <!--end of login menu-->
          <div class="menu">
             <ul>
-               <li><a href="index.php">HOME</a></li>
+               <li class="selected"><a href="hometeacher.php">HOME</a></li>
                <li><a href="services.php">DOWNLOADS</a></li>
                <li><a href="about.php">ABOUT</a></li>
                <!--<li><a href="services.php">SERVICES</a></li>
                <li><a href="works.php">WORKS</a></li>
                <li ><a href="pricing.php"  >PRICING</a></li>-->
-               <li><a  href="signup.php">LOGOUT</a></li>
+               <li><a href="logout.php">LOGOUT</a></li>
             </ul>
          </div>
          <!--end of menu-->
       </div>
       <!--end of top-->
       <div class="banner">
-         <h1>CLUB & SOCIETY REGISTRATION FORM</h1>
+         <h1>CLUB/SOCIETY REGISTRATION</h1>
       </div>
       <!--end of banner-->  
       <div class="col-md-12">
          <div class="address">
-            <form>
+            <form action="joinclub.php" method="POST"> 
                <fieldset>
                   <ul>
-                  <li class="col-md-3">Club/Society</li>
-                  <li class="col-md-9">
-                  <select>
-                     <option>Rotaract</option>
-                     <option>AIESEC</option>
-                     <option>Gavel</option>
-                     <option>Media club</option>
-                     <option>Science Society</option>
-                     <option>Literature Society</option>
+                  <li class="col-md-3">Admission Number</li>
+                  <li>
+                     <input class="col-md-12" type="text" disabled name="nicNumber" value=<?php echo $row['admission_number']; ?>></li>
+                  <li class="col-md-3">Name</li>
+                  <li><input class="col-md-12" type="text" disabled name="contactNumber" value=<?php echo $row['name']; ?>></li>
+                  <li class="col-md-3">Club</li>
+                  <li>
+                  <select name="club">
+                     <option value="aiesec">AIESEC</option>
+                     <option value="rotaract">Rotaract</option>
+                     <option value="leo">LEO</option>
                   </select>
                   </li>
                   <li class="col-md-3">Skills</li>
-                  <li><input class="col-md-12" type="text" name="" placeholder="Amount"></li>
-                  </ul>
+                  <li><textarea class="col-md-12" type="Date" rows="3" title="Recheck your Leave Date!" name="leavedate"></textarea>
+                  </li>
                </fieldset>
-               <div class="col-md-2"><button>PRINT</button></div>
-               <div class="col-md-10"><input class="button" type="submit" name="" value="SUBMIT"></div>
+               <?php
+                  }
+               ?>
+               <div class="col-md-2"><button>CANCEL</button></div>
+               <button type="submit">JOIN</button></div>            
             </form>
+            <script>
+            function myFunction() {
+         
+         if($('#leave').val()!="longleave"){
+            document.getElementById("leaveto").disabled = true;
+         }else{
+            document.getElementById("leaveto").disabled = false;
+            
+         }
+      }
+</script>
          </div>
          <!--end of address-->
       </div>
