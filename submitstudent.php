@@ -27,7 +27,8 @@
 		$dob=explode("-",$dateOfBirth);
 		$date =time()-mktime(0,0,0,$dob[2],$dob[1],$dob[0]);
 		$age=$date/31536000;
-		if($age<5 || $age>18){
+		if($age<5){
+			if($age>18){
 			Print '<script>alert("Recheck your Date of Birth!");</script>';
 			Print '<script>window.location.assign("registerstudent.php");</script>';
 		}else{

@@ -16,6 +16,7 @@
         $sqll = "SELECT * FROM student WHERE admission_number='{$_SESSION['user']}'";            
         $res = mysqli_query($link,$sqll);
         if($row=mysqli_fetch_assoc($res)){  
+ 
 		$fullName=$_POST['fullName'];
 		$nameWithInitials=$_POST['nameWithInitials'];
 		$address=$_POST['address'];
