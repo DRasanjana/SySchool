@@ -1,9 +1,4 @@
-<?php
-session_start();
-   //if( $_SESSION['user']==''){
-     // header("location: index.php");
-   //}
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -131,11 +126,7 @@ session_start();
                            </div>
                            <div class="img-show">
                               <div class="center">
-<<<<<<< HEAD
                                  <p><button class="update" type="submit" onclick="window.location.href='insertmarks.php'">INSERT MARKS</button></p>
-=======
-                                 <p><button class="update" type="submit" onclick="window.location.href='studentAttendence.php'">MARK STUDENT ATTENDENCE</button></p>
->>>>>>> c89502d4e74eff6c104fadf925d4759ec1a9423f
                               </div>
                            </div>
                         </div>
@@ -150,7 +141,7 @@ session_start();
                            </div>
                            <div class="img-show">
                               <div class="center">
-                                 <p><button class="update" type="submit" onclick="window.location.href='changepassword.php'">CHANGE PASSWORD</button></p>
+                                 <p><button class="update" type="submit" onclick="window.location.href='studentattendence.php'">STUDENT ATTENDENCE</button></p>
                               </div>
                            </div>
                         </div>
